@@ -1,3 +1,4 @@
+
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -7,21 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --primary: #2E86C1;
-  --primary-light: #5DADE2;
-  --primary-dark: #1B4F72;
-  --secondary: #27AE60;
-  --secondary-light: #58D68D;
-  --secondary-dark: #196F3D;
-  --accent: #E67E22;
-  --accent-light: #F39C12;
-  --accent-dark: #CA6F1E;
-  --purple: #8E44AD;
-  --purple-light: #BB8FCE;
-  --pink: #E84393;
-  --pink-light: #FD79A8;
-  --teal: #17A589;
-  --teal-light: #48C9B0;
+  --primary: #1B4F72;
+  --primary-light: #2E86C1;
+  --secondary: #196F3D;
+  --secondary-light: #27AE60;
+  --accent: #CA6F1E;
+  --accent-light: #E67E22;
   --light: #F8F9FA;
   --light-gray: #EAECEE;
   --medium-gray: #BFC9CA;
@@ -30,9 +22,9 @@
   --success: #27AE60;
   --warning: #F39C12;
   --danger: #E74C3C;
-  --border-radius: 14px;
-  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  --box-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --border-radius: 10px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --box-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.12);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -45,9 +37,9 @@
 
 body {
   font-family: 'Cairo', sans-serif;
-  background: linear-gradient(135deg, #F0F8FF 0%, #E8F8F5 50%, #FEF9E7 100%);
+  background: linear-gradient(135deg, #f0f9ff 0%, #f0fff4 100%);
   color: var(--dark);
-  line-height: 1.7;
+  line-height: 1.6;
   min-height: 100vh;
   padding: 0;
 }
@@ -55,41 +47,34 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 12px;
 }
 
-/* الهيدر بألوان جميلة */
+/* الهيدر مع شعار الوزارة */
 .header {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(rgba(27, 79, 114, 0.9), rgba(27, 79, 114, 0.95)), 
+              url('https://i.ibb.co/kVWFFwhW/9-C92-E57-B-23-FA-479-D-A024-1-D5-F871-B4-F8-D.png') center/cover;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   padding: 20px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: white;
   position: relative;
   overflow: hidden;
-}
-
-.header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 150px;
-  height: 150px;
-  background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
-  border-radius: 50%;
-  transform: translate(30%, -30%);
+  min-height: 150px;
+  display: flex;
+  align-items: center;
 }
 
 .header-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -97,12 +82,18 @@ body {
     flex-direction: column;
     text-align: center;
   }
+  
+  .header {
+    min-height: 180px;
+    padding: 15px;
+  }
 }
 
 .logo-section {
   display: flex;
   align-items: center;
   gap: 15px;
+  flex: 1;
 }
 
 .logo-icon {
@@ -117,40 +108,48 @@ body {
   font-size: 28px;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.logo-text {
+  flex: 1;
 }
 
 .logo-text h1 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 5px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .logo-text p {
   font-size: 14px;
-  opacity: 0.9;
+  opacity: 0.95;
+  font-weight: 300;
 }
 
 .header-stats {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .stat-item {
   background: rgba(255, 255, 255, 0.15);
-  padding: 8px 15px;
-  border-radius: 30px;
-  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 13px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
 }
 
 .stat-item i {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* شريط التنقل للجوال */
@@ -160,9 +159,9 @@ body {
   left: 0;
   right: 0;
   background: white;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  padding: 10px;
+  padding: 10px 5px;
   display: none;
   justify-content: space-around;
   border-top: 3px solid var(--primary);
@@ -186,32 +185,26 @@ body {
   background: none;
   border: none;
   color: var(--dark-gray);
-  font-size: 12px;
-  padding: 8px 5px;
+  font-size: 11px;
+  padding: 6px 3px;
   cursor: pointer;
   flex: 1;
   transition: var(--transition);
-  border-radius: 10px;
+  border-radius: 8px;
+  min-width: 0;
 }
 
 .nav-btn:hover, .nav-btn.active {
   color: var(--primary);
-  background: rgba(46, 134, 193, 0.1);
-  transform: translateY(-3px);
+  background: rgba(27, 79, 114, 0.08);
 }
 
 .nav-btn i {
-  font-size: 18px;
+  font-size: 16px;
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.nav-btn.active i {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 /* المحتوى الرئيسي */
@@ -221,9 +214,9 @@ body {
   gap: 20px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
   .main-content {
-    grid-template-columns: 1fr 380px;
+    grid-template-columns: 1fr 350px;
   }
 }
 
@@ -232,109 +225,71 @@ body {
   background: white;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  padding: 25px;
+  padding: 20px;
   height: fit-content;
   position: sticky;
   top: 20px;
   border: 1px solid var(--light-gray);
 }
 
+@media (max-width: 768px) {
+  .control-panel {
+    position: relative;
+    top: 0;
+  }
+}
+
 .control-panel h3 {
-  color: var(--primary-dark);
-  margin-bottom: 20px;
+  color: var(--primary);
+  margin-bottom: 15px;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--primary-light);
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 18px;
+  gap: 8px;
+  font-size: 17px;
 }
 
 /* القوالب السريعة */
 .quick-templates {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 25px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .template-btn {
   background: white;
   border: 2px solid var(--light-gray);
-  border-radius: 12px;
-  padding: 15px 10px;
+  border-radius: 10px;
+  padding: 12px 8px;
   cursor: pointer;
   transition: var(--transition);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-.template-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--primary);
-  transform: translateY(-100%);
-  transition: var(--transition);
-}
-
 .template-btn:hover {
   border-color: var(--primary);
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: var(--box-shadow-hover);
 }
 
-.template-btn:hover::before {
-  transform: translateY(0);
-}
-
-.template-btn:nth-child(1)::before { background: var(--primary); }
-.template-btn:nth-child(2)::before { background: var(--secondary); }
-.template-btn:nth-child(3)::before { background: var(--accent); }
-.template-btn:nth-child(4)::before { background: var(--purple); }
-
 .template-btn i {
-  font-size: 24px;
+  font-size: 22px;
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.template-btn:nth-child(1) i {
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.template-btn:nth-child(2) i {
-  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.template-btn:nth-child(3) i {
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.template-btn:nth-child(4) i {
-  background: linear-gradient(135deg, var(--purple), var(--purple-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .template-btn span {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--dark);
 }
@@ -343,79 +298,59 @@ body {
 .action-buttons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 25px;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .action-btn {
-  padding: 16px;
+  padding: 14px;
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   font-family: 'Cairo', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   position: relative;
   overflow: hidden;
 }
 
-.action-btn::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  transform: translate(50%, -50%);
-  transition: width 0.6s, height 0.6s;
-}
-
-.action-btn:hover::after {
-  width: 300px;
-  height: 300px;
-}
-
 .action-btn i {
-  font-size: 18px;
-  position: relative;
-  z-index: 1;
+  font-size: 16px;
 }
 
 .btn-preview {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: white;
 }
 
 .btn-preview:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(46, 134, 193, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(27, 79, 114, 0.3);
 }
 
 .btn-print {
-  background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
   color: white;
 }
 
 .btn-print:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
 }
 
 .btn-save {
-  background: linear-gradient(135deg, var(--teal), #148F77);
+  background: linear-gradient(135deg, #17A589, #48C9B0);
   color: white;
 }
 
 .btn-save:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(23, 165, 137, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(23, 165, 137, 0.3);
 }
 
 .btn-clear {
@@ -424,8 +359,8 @@ body {
 }
 
 .btn-clear:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(231, 76, 60, 0.3);
 }
 
 /* نموذج الإدخال */
@@ -438,82 +373,65 @@ body {
 }
 
 .form-header {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: white;
-  padding: 20px;
+  padding: 18px 20px;
   position: relative;
   overflow: hidden;
 }
 
-.form-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
-  height: 100px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  transform: translate(30%, -30%);
-}
-
 .form-header h2 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   position: relative;
   z-index: 1;
 }
 
 .form-content {
-  padding: 25px;
+  padding: 20px;
 }
 
 /* أقسام النموذج */
 .form-section {
-  margin-bottom: 30px;
-  padding: 20px;
+  margin-bottom: 25px;
+  padding: 18px;
   background: var(--light);
   border-radius: var(--border-radius);
   border-right: 4px solid var(--primary);
-  transition: var(--transition);
-}
-
-.form-section:hover {
-  transform: translateX(-5px);
-  box-shadow: var(--box-shadow);
 }
 
 .section-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
-  color: var(--primary-dark);
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+  color: var(--primary);
+  margin-bottom: 15px;
+  padding-bottom: 8px;
   border-bottom: 2px solid var(--primary-light);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .section-title i {
   color: var(--primary);
-  background: rgba(46, 134, 193, 0.1);
-  width: 36px;
-  height: 36px;
+  background: rgba(27, 79, 114, 0.1);
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 /* الحقول */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 15px;
 }
 
 @media (max-width: 768px) {
@@ -523,38 +441,39 @@ body {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .form-label {
   display: block;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--dark);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .form-label i {
   color: var(--primary);
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(46, 134, 193, 0.1);
-  border-radius: 6px;
+  background: rgba(27, 79, 114, 0.1);
+  border-radius: 5px;
+  flex-shrink: 0;
 }
 
 .form-control {
   width: 100%;
-  padding: 14px 16px;
+  padding: 12px 14px;
   border: 2px solid var(--light-gray);
-  border-radius: 10px;
+  border-radius: 8px;
   font-family: 'Cairo', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--dark);
   transition: var(--transition);
   background: white;
@@ -563,12 +482,11 @@ body {
 .form-control:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(46, 134, 193, 0.1);
-  background: white;
+  box-shadow: 0 0 0 3px rgba(27, 79, 114, 0.1);
 }
 
 textarea.form-control {
-  min-height: 120px;
+  min-height: 100px;
   resize: vertical;
   line-height: 1.6;
 }
@@ -576,61 +494,53 @@ textarea.form-control {
 /* منطقة رفع الصور */
 .upload-area {
   border: 3px dashed var(--primary-light);
-  border-radius: 12px;
-  padding: 30px;
+  border-radius: 10px;
+  padding: 25px;
   text-align: center;
   cursor: pointer;
   transition: var(--transition);
-  margin-bottom: 20px;
-  background: rgba(46, 134, 193, 0.05);
-  position: relative;
-  overflow: hidden;
+  margin-bottom: 15px;
+  background: rgba(27, 79, 114, 0.05);
 }
 
 .upload-area:hover {
   border-color: var(--primary);
-  background: rgba(46, 134, 193, 0.1);
-  transform: translateY(-3px);
+  background: rgba(27, 79, 114, 0.1);
 }
 
 .upload-area i {
-  font-size: 48px;
+  font-size: 42px;
   color: var(--primary);
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   display: block;
 }
 
 .upload-area p {
   color: var(--dark);
-  font-size: 16px;
-  margin-bottom: 8px;
+  font-size: 15px;
+  margin-bottom: 6px;
   font-weight: 500;
 }
 
 .upload-area small {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--dark-gray);
 }
 
 .image-preview {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 15px;
 }
 
 .preview-image {
   position: relative;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
-  height: 140px;
+  height: 120px;
   box-shadow: var(--box-shadow);
   transition: var(--transition);
-}
-
-.preview-image:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: var(--box-shadow-hover);
 }
 
 .preview-image img {
@@ -641,12 +551,12 @@ textarea.form-control {
 
 .remove-image {
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: 6px;
+  left: 6px;
   background: linear-gradient(135deg, var(--danger), #C0392B);
   color: white;
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -654,6 +564,7 @@ textarea.form-control {
   cursor: pointer;
   transition: var(--transition);
   opacity: 0.9;
+  font-size: 12px;
 }
 
 .remove-image:hover {
@@ -663,62 +574,62 @@ textarea.form-control {
 
 /* قسم التوقيعات */
 .signatures-section {
-  background: linear-gradient(135deg, rgba(46, 134, 193, 0.05), rgba(39, 174, 96, 0.05));
-  border-radius: 12px;
-  padding: 25px;
-  margin-top: 25px;
-  border: 1px solid rgba(46, 134, 193, 0.2);
+  background: linear-gradient(135deg, rgba(27, 79, 114, 0.05), rgba(39, 174, 96, 0.05));
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid rgba(27, 79, 114, 0.15);
 }
 
 .signatures-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  gap: 20px;
 }
 
 .signature-field {
   text-align: center;
   background: white;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 18px;
+  border-radius: 8px;
   box-shadow: var(--box-shadow);
-  transition: var(--transition);
-}
-
-.signature-field:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--box-shadow-hover);
 }
 
 .signature-input {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   border: 2px solid var(--light-gray);
-  border-radius: 10px;
+  border-radius: 8px;
   font-family: 'Cairo', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
   background: white;
-  margin-top: 12px;
+  margin-top: 10px;
   transition: var(--transition);
 }
 
 .signature-input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(46, 134, 193, 0.1);
+  box-shadow: 0 0 0 3px rgba(27, 79, 114, 0.1);
 }
 
 /* التنبيهات */
 .alert {
-  padding: 15px 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 15px;
+  gap: 10px;
+  font-size: 14px;
   animation: slideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   border-right: 4px solid;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 @keyframes slideIn {
@@ -733,26 +644,26 @@ textarea.form-control {
 }
 
 .alert-success {
-  background: linear-gradient(135deg, rgba(39, 174, 96, 0.1), rgba(46, 204, 113, 0.1));
-  color: var(--secondary-dark);
+  background: linear-gradient(135deg, rgba(39, 174, 96, 0.95), rgba(46, 204, 113, 0.95));
+  color: white;
   border-right-color: var(--success);
 }
 
 .alert-warning {
-  background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(245, 176, 65, 0.1));
-  color: #B9770E;
+  background: linear-gradient(135deg, rgba(243, 156, 18, 0.95), rgba(245, 176, 65, 0.95));
+  color: white;
   border-right-color: var(--warning);
 }
 
 .alert-error {
-  background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(235, 110, 98, 0.1));
-  color: #C0392B;
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.95), rgba(235, 110, 98, 0.95));
+  color: white;
   border-right-color: var(--danger);
 }
 
 .alert-info {
-  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(93, 173, 226, 0.1));
-  color: var(--primary-dark);
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.95), rgba(93, 173, 226, 0.95));
+  color: white;
   border-right-color: var(--primary);
 }
 
@@ -763,12 +674,12 @@ textarea.form-control {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.95);
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 2000;
-  padding: 20px;
+  padding: 15px;
   backdrop-filter: blur(10px);
 }
 
@@ -776,18 +687,18 @@ textarea.form-control {
   background: white;
   border-radius: var(--border-radius);
   width: 100%;
-  max-width: 1000px;
+  max-width: 800px;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
   animation: scaleIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
@@ -799,8 +710,8 @@ textarea.form-control {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 25px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  padding: 18px 20px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: white;
   position: sticky;
   top: 0;
@@ -812,11 +723,11 @@ textarea.form-control {
   background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   cursor: pointer;
-  padding: 8px;
-  width: 40px;
-  height: 40px;
+  padding: 6px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -829,170 +740,229 @@ textarea.form-control {
   transform: rotate(90deg);
 }
 
-/* تصميم التقرير الملون */
+/* تصميم التقرير PDF - صفحة واحدة */
 .report-content {
-  padding: 30px;
+  padding: 25px;
   font-family: 'Cairo', sans-serif;
+  background: white;
 }
 
-.report-header {
+/* الهدف التربوي في الأعلى */
+.goal-section {
+  background: linear-gradient(135deg, #27AE60, #2ECC71);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
   text-align: center;
-  margin-bottom: 40px;
-  padding-bottom: 25px;
-  border-bottom: 3px solid var(--primary);
-  position: relative;
-  background: linear-gradient(135deg, rgba(46, 134, 193, 0.05), rgba(39, 174, 96, 0.05));
-  padding: 25px;
-  border-radius: 12px;
+  box-shadow: var(--box-shadow);
 }
 
-.report-header h1 {
-  color: var(--primary-dark);
-  font-size: 28px;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-.report-header h2 {
-  color: var(--secondary-dark);
+.goal-section h3 {
   font-size: 20px;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.report-header h3 {
-  color: var(--dark);
-  font-size: 18px;
   margin-bottom: 15px;
-}
-
-.report-date {
-  color: var(--accent);
-  font-size: 16px;
-  font-weight: 500;
-  background: white;
-  padding: 8px 20px;
-  border-radius: 30px;
-  display: inline-block;
-  margin-top: 10px;
-  border: 2px solid var(--accent-light);
-}
-
-.report-section {
-  margin-bottom: 30px;
-  padding: 25px;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  border-right: 4px solid;
-  transition: var(--transition);
-}
-
-.report-section:hover {
-  transform: translateX(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.report-section:nth-child(odd) {
-  border-right-color: var(--primary);
-  background: linear-gradient(135deg, rgba(46, 134, 193, 0.03), white);
-}
-
-.report-section:nth-child(even) {
-  border-right-color: var(--secondary);
-  background: linear-gradient(135deg, rgba(39, 174, 96, 0.03), white);
-}
-
-.report-section-title {
-  color: var(--primary-dark);
-  font-size: 20px;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 700;
-}
-
-.report-section:nth-child(odd) .report-section-title {
-  border-bottom-color: var(--primary);
-  color: var(--primary-dark);
-}
-
-.report-section:nth-child(even) .report-section-title {
-  border-bottom-color: var(--secondary);
-  color: var(--secondary-dark);
-}
-
-.report-section-title i {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 18px;
+  gap: 10px;
 }
 
-.report-section:nth-child(odd) .report-section-title i {
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-}
-
-.report-section:nth-child(even) .report-section-title i {
-  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
-}
-
-.report-section-content {
-  color: var(--dark);
-  line-height: 1.8;
+.goal-section .goal-content {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 10px;
   font-size: 16px;
-  white-space: pre-line;
+  line-height: 1.8;
+  text-align: right;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* الصف الثاني: إجراءات التنفيذ والنتائج المتحققة */
+.row-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .row-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.implementation-box, .results-box {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  height: 300px;
+  overflow-y: auto;
+}
+
+.implementation-box {
+  background: linear-gradient(135deg, #3498DB, #5DADE2);
+  color: white;
+  border-right: 6px solid #2980B9;
+}
+
+.results-box {
+  background: linear-gradient(135deg, #9B59B6, #BB8FCE);
+  color: white;
+  border-right: 6px solid #8E44AD;
+}
+
+.implementation-box h4, .results-box h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.implementation-content, .results-content {
+  background: rgba(255, 255, 255, 0.15);
   padding: 15px;
-  background: rgba(255, 255, 255, 0.5);
   border-radius: 8px;
-  border-right: 3px solid rgba(46, 134, 193, 0.2);
+  font-size: 15px;
+  line-height: 1.7;
+  height: 200px;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* الصف الثالث: التوصيات ونقاط القوة */
+.row-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .row-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recommendations-box, .strengths-box {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  height: 250px;
+  overflow-y: auto;
+}
+
+.recommendations-box {
+  background: linear-gradient(135deg, #2E86C1, #5DADE2);
+  color: white;
+  border-right: 6px solid #1B4F72;
+}
+
+.strengths-box {
+  background: linear-gradient(135deg, #58D68D, #ABEBC6);
+  color: #196F3D;
+  border-right: 6px solid #27AE60;
+}
+
+.recommendations-box h4, .strengths-box h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.recommendations-content, .strengths-content {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.7;
+  height: 160px;
+  overflow-y: auto;
+}
+
+/* فرص التحسين في الأسفل */
+.improvements-box {
+  background: linear-gradient(135deg, #E67E22, #F39C12);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 25px;
+  border-right: 6px solid #D35400;
+  height: 250px;
+  overflow-y: auto;
+}
+
+.improvements-box h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.improvements-content {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.8;
+  height: 160px;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* قسم الصور */
+.images-section {
+  margin-bottom: 25px;
+}
+
+.images-section h4 {
+  font-size: 18px;
+  color: var(--primary);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .report-images {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  gap: 15px;
 }
 
 .report-image {
-  border: 2px solid var(--light-gray);
+  border: 3px solid var(--light-gray);
   border-radius: 10px;
   overflow: hidden;
   transition: var(--transition);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.report-image:hover {
-  border-color: var(--primary);
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--box-shadow);
+  height: 180px;
 }
 
 .report-image img {
   width: 100%;
-  height: 180px;
+  height: 100%;
   object-fit: cover;
 }
 
+/* التوقيعات */
 .report-signatures {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
-  padding-top: 30px;
+  margin-top: 30px;
+  padding-top: 20px;
   border-top: 2px solid var(--primary-light);
   flex-wrap: wrap;
-  gap: 30px;
-  background: linear-gradient(135deg, rgba(46, 134, 193, 0.05), rgba(39, 174, 96, 0.05));
-  padding: 30px;
-  border-radius: 15px;
+  gap: 20px;
 }
 
 @media (max-width: 768px) {
@@ -1005,64 +975,41 @@ textarea.form-control {
 .signature-box {
   text-align: center;
   flex: 1;
-  min-width: 250px;
+  min-width: 200px;
   background: white;
-  padding: 25px;
-  border-radius: 12px;
+  padding: 20px;
+  border-radius: 10px;
   box-shadow: var(--box-shadow);
-  transition: var(--transition);
   border-top: 4px solid var(--primary);
 }
 
-.signature-box:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--box-shadow-hover);
-}
-
-.signature-box:nth-child(2) {
-  border-top-color: var(--secondary);
-}
-
 .signature-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  color: var(--primary-dark);
+  color: var(--primary);
   margin-bottom: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-}
-
-.signature-box:nth-child(2) .signature-title {
-  color: var(--secondary-dark);
+  gap: 8px;
 }
 
 .signature-name {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--dark);
-  margin-top: 20px;
-  padding: 15px;
-  background: rgba(46, 134, 193, 0.05);
-  border-radius: 10px;
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(27, 79, 114, 0.05);
+  border-radius: 8px;
   font-weight: 600;
-  border: 2px dashed rgba(46, 134, 193, 0.3);
-}
-
-.signature-box:nth-child(2) .signature-name {
-  background: rgba(39, 174, 96, 0.05);
-  border-color: rgba(39, 174, 96, 0.3);
+  border: 2px dashed rgba(27, 79, 114, 0.2);
 }
 
 .signature-line {
-  width: 180px;
+  width: 150px;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--primary), transparent);
-  margin: 20px auto;
-}
-
-.signature-box:nth-child(2) .signature-line {
-  background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+  margin: 15px auto;
 }
 
 /* شاشة التحميل */
@@ -1084,30 +1031,34 @@ textarea.form-control {
 }
 
 .loading-content {
-  background: linear-gradient(135deg, rgba(46, 134, 193, 0.2), rgba(39, 174, 96, 0.2));
-  padding: 40px;
-  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(27, 79, 114, 0.3), rgba(39, 174, 96, 0.3));
+  padding: 30px;
+  border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .loading-spinner {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border: 4px solid rgba(255, 255, 255, 0.1);
   border-top-color: var(--primary-light);
   border-radius: 50%;
   animation: spin 1s linear infinite;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .loading-overlay p {
-  font-size: 20px;
-  margin-bottom: 15px;
+  font-size: 18px;
+  margin-bottom: 10px;
   font-weight: 600;
 }
 
 .loading-overlay small {
-  font-size: 14px;
+  font-size: 13px;
   opacity: 0.8;
   color: var(--light-gray);
 }
@@ -1143,18 +1094,14 @@ textarea.form-control {
   }
   
   .report-content {
-    padding: 20mm;
+    padding: 15mm;
+    font-size: 12pt;
   }
   
-  .report-header {
-    background: none !important;
-    border-bottom: 3px solid #000 !important;
-  }
-  
-  .report-section {
+  .goal-section, .implementation-box, .results-box,
+  .recommendations-box, .strengths-box, .improvements-box {
     break-inside: avoid;
     box-shadow: none !important;
-    border: 1px solid #ddd !important;
   }
   
   .report-images {
@@ -1164,12 +1111,12 @@ textarea.form-control {
 
 /* تخصيص شريط التمرير */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(46, 134, 193, 0.1);
+  background: rgba(27, 79, 114, 0.1);
   border-radius: 10px;
 }
 
@@ -1181,11 +1128,134 @@ textarea.form-control {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, var(--primary-dark), var(--primary));
 }
+
+/* عدادات الأحرف */
+.char-counter {
+  text-align: left;
+  font-size: 12px;
+  margin-top: 5px;
+  padding: 4px 8px;
+  background: rgba(27, 79, 114, 0.05);
+  border-radius: 4px;
+  display: inline-block;
+  border-right: 2px solid var(--primary);
+  color: var(--dark-gray);
+}
+
+.char-limit {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.form-hint {
+  font-size: 12px;
+  color: var(--dark-gray);
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form-hint i {
+  color: var(--accent);
+}
+
+/* تحسينات للجوال */
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+  }
+  
+  .header {
+    padding: 12px;
+    min-height: 160px;
+  }
+  
+  .logo-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+  
+  .logo-text h1 {
+    font-size: 17px;
+  }
+  
+  .logo-text p {
+    font-size: 12px;
+  }
+  
+  .stat-item {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+  
+  .form-content {
+    padding: 15px;
+  }
+  
+  .form-section {
+    padding: 15px;
+  }
+  
+  .section-title {
+    font-size: 16px;
+  }
+  
+  .form-control {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .upload-area {
+    padding: 20px;
+  }
+  
+  .upload-area i {
+    font-size: 36px;
+  }
+  
+  .upload-area p {
+    font-size: 14px;
+  }
+  
+  .preview-image {
+    height: 100px;
+  }
+  
+  .action-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .template-btn {
+    padding: 10px 6px;
+  }
+  
+  .template-btn i {
+    font-size: 20px;
+  }
+  
+  .template-btn span {
+    font-size: 12px;
+  }
+}
+
+/* تحسينات اللمس */
+@media (hover: none) and (pointer: coarse) {
+  .action-btn:active, .template-btn:active {
+    transform: scale(0.98);
+  }
+  
+  .form-control, .signature-input {
+    font-size: 16px; /* منع التكبير في iOS */
+  }
+}
 </style>
 </head>
 <body>
 <div class="container">
-  <!-- الهيدر الملون -->
+  <!-- الهيدر مع خلفية شعار الوزارة -->
   <header class="header">
     <div class="header-content">
       <div class="logo-section">
@@ -1194,7 +1264,7 @@ textarea.form-control {
         </div>
         <div class="logo-text">
           <h1>أداة التقارير التعليمية الذكية</h1>
-          <p>وزارة التعليم - إعداد تقارير احترافية بألوان جميلة</p>
+          <p>وزارة التعليم - إعداد تقارير احترافية</p>
         </div>
       </div>
       
@@ -1204,12 +1274,12 @@ textarea.form-control {
           <span>بيانات مؤمنة</span>
         </div>
         <div class="stat-item">
-          <i class="fas fa-palette"></i>
-          <span>تصميم ملون</span>
+          <i class="fas fa-file-pdf"></i>
+          <span>تصدير PDF</span>
         </div>
         <div class="stat-item">
           <i class="fas fa-mobile-alt"></i>
-          <span>متجاوب بالكامل</span>
+          <span>متجاوب</span>
         </div>
       </div>
     </div>
@@ -1220,8 +1290,7 @@ textarea.form-control {
     <!-- نموذج الإدخال -->
     <main class="form-container">
       <div class="form-header">
-        <h2><i class="fas fa-palette"></i> إنشاء تقرير ملون جديد
-      </h2>
+        <h2><i class="fas fa-file-alt"></i> إنشاء تقرير تعليمي</h2>
       </div>
 
       <div class="form-content">
@@ -1238,8 +1307,8 @@ textarea.form-control {
                 اسم المدرسة
               </label>
               <input type="text" class="form-control" id="school-name" 
-                     placeholder="أدخل اسم المدرسة الكامل" required>
-              <div class="form-hint" style="font-size: 13px; color: var(--dark-gray); margin-top: 5px;">
+                     placeholder="أدخل اسم المدرسة" required>
+              <div class="form-hint">
                 <i class="fas fa-lightbulb"></i>
                 مثال: مدرسة النخبة العلمية الثانوية
               </div>
@@ -1252,11 +1321,11 @@ textarea.form-control {
               </label>
               <select class="form-control" id="education-department">
                 <option value="">اختر إدارة التعليم</option>
-                <option value="الرياض">الإدارة العامة للتعليم بمنطقة الرياض</option>
-                <option value="مكة">الإدارة العامة للتعليم بمنطقة مكة المكرمة</option>
-                <option value="الشرقية">الإدارة العامة للتعليم بالمنطقة الشرقية</option>
-                <option value="المدينة">الإدارة العامة للتعليم بمنطقة المدينة المنورة</option>
-                <option value="القصيم">الإدارة العامة للتعليم بمنطقة القصيم</option>
+                <option value="الرياض">تعليم الرياض</option>
+                <option value="مكة">تعليم مكة</option>
+                <option value="الشرقية">تعليم الشرقية</option>
+                <option value="المدينة">تعليم المدينة</option>
+                <option value="القصيم">تعليم القصيم</option>
               </select>
             </div>
           </div>
@@ -1265,7 +1334,7 @@ textarea.form-control {
         <!-- معلومات التقرير -->
         <div class="form-section">
           <h3 class="section-title">
-            <i class="fas fa-file-alt"></i>
+            <i class="fas fa-info-circle"></i>
             معلومات التقرير
           </h3>
           <div class="form-grid">
@@ -1289,7 +1358,7 @@ textarea.form-control {
                 الفئة المستهدفة
               </label>
               <input type="text" class="form-control" id="target-audience" 
-                     placeholder="مثال: طلاب الصف الثالث الثانوي المتميزين">
+                     placeholder="مثال: طلاب الصف الثالث الثانوي">
             </div>
             
             <div class="form-group">
@@ -1310,98 +1379,100 @@ textarea.form-control {
                 المادة الدراسية
               </label>
               <input type="text" class="form-control" id="subject" 
-                     placeholder="مثال: الرياضيات - الفيزياء - اللغة العربية">
+                     placeholder="مثال: الرياضيات - الفيزياء">
             </div>
           </div>
         </div>
 
-        <!-- محتوى التقرير -->
+        <!-- محتوى التقرير - صفحة واحدة -->
         <div class="form-section">
           <h3 class="section-title">
-            <i class="fas fa-file-signature"></i>
-            محتوى التقرير الملون
+            <i class="fas fa-edit"></i>
+            محتوى التقرير (صفحة واحدة)
           </h3>
           
           <div class="form-group">
             <label class="form-label">
               <i class="fas fa-bullseye"></i>
-              الهدف التربوي
+              الهدف التربوي (الأخضر - أعلى الصفحة)
             </label>
             <textarea class="form-control" id="educational-goal" 
-                      placeholder="اكتب الهدف التربوي من النشاط بشكل واضح ومحدد..." 
-                      rows="4" required></textarea>
-            <div class="char-counter" id="goal-counter">0/300 حرف</div>
+                      placeholder="اكتب الهدف التربوي هنا (حد أقصى 250 حرف)..." 
+                      rows="3" maxlength="250" required></textarea>
+            <div class="char-counter" id="goal-counter">0/250 حرف</div>
+          </div>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">
+                <i class="fas fa-tasks"></i>
+                إجراءات التنفيذ (الأزرق - الصف الثاني)
+              </label>
+              <textarea class="form-control" id="implementation-steps" 
+                        placeholder="صف إجراءات التنفيذ هنا (حد أقصى 250 حرف)..." 
+                        rows="3" maxlength="250"></textarea>
+              <div class="char-counter" id="steps-counter">0/250 حرف</div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">
+                <i class="fas fa-chart-line"></i>
+                النتائج المتحققة (البنفسجي - الصف الثاني)
+              </label>
+              <textarea class="form-control" id="achieved-results" 
+                        placeholder="سجل النتائج المتحققة هنا (حد أقصى 250 حرف)..." 
+                        rows="3" maxlength="250"></textarea>
+              <div class="char-counter" id="results-counter">0/250 حرف</div>
+            </div>
+          </div>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">
+                <i class="fas fa-comments"></i>
+                التوصيات (الأزرق - الصف الثالث)
+              </label>
+              <textarea class="form-control" id="recommendations" 
+                        placeholder="اكتب التوصيات هنا (حد أقصى 250 حرف)..." 
+                        rows="3" maxlength="250"></textarea>
+              <div class="char-counter" id="rec-counter">0/250 حرف</div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">
+                <i class="fas fa-thumbs-up"></i>
+                نقاط القوة (الأخضر الفاتح - الصف الثالث)
+              </label>
+              <textarea class="form-control" id="strengths" 
+                        placeholder="اكتب نقاط القوة هنا (حد أقصى 250 حرف)..." 
+                        rows="3" maxlength="250"></textarea>
+              <div class="char-counter" id="strengths-counter">0/250 حرف</div>
+            </div>
           </div>
           
           <div class="form-group">
             <label class="form-label">
-              <i class="fas fa-tasks"></i>
-              إجراءات التنفيذ
+              <i class="fas fa-lightbulb"></i>
+              فرص التحسين (البرتقالي - أسفل الصفحة)
             </label>
-            <textarea class="form-control" id="implementation-steps" 
-                      placeholder="صف خطوات التنفيذ بالترتيب مع تحديد المسؤوليات..." 
-                      rows="5"></textarea>
-            <div class="char-counter" id="steps-counter">0/500 حرف</div>
-          </div>
-          
-          <div class="form-grid">
-            <div class="form-group">
-              <label class="form-label">
-                <i class="fas fa-chart-line"></i>
-                النتائج المتحققة
-              </label>
-              <textarea class="form-control" id="achieved-results" 
-                        placeholder="سجل النتائج الملموسة والأثر الإيجابي..." 
-                        rows="4"></textarea>
-              <div class="char-counter" id="results-counter">0/400 حرف</div>
-            </div>
-            
-            <div class="form-group">
-              <label class="form-label">
-                <i class="fas fa-comments"></i>
-                التوصيات والمقترحات
-              </label>
-              <textarea class="form-control" id="recommendations" 
-                        placeholder="اقترح تحسينات للمستقبل وتوصيات عملية..." 
-                        rows="4"></textarea>
-              <div class="char-counter" id="rec-counter">0/400 حرف</div>
-            </div>
-          </div>
-          
-          <div class="form-grid">
-            <div class="form-group">
-              <label class="form-label">
-                <i class="fas fa-thumbs-up"></i>
-                نقاط القوة
-              </label>
-              <textarea class="form-control" id="strengths" 
-                        placeholder="ما الذي نجح بشكل ممتاز في النشاط؟" 
-                        rows="3"></textarea>
-            </div>
-            
-            <div class="form-group">
-              <label class="form-label">
-                <i class="fas fa-lightbulb"></i>
-                فرص التحسين
-              </label>
-              <textarea class="form-control" id="improvements" 
-                        placeholder="ما الذي يمكن تحسينه في المرات القادمة؟" 
-                        rows="3"></textarea>
-            </div>
+            <textarea class="form-control" id="improvements" 
+                      placeholder="اكتب فرص التحسين هنا (حد أقصى 250 حرف)..." 
+                      rows="3" maxlength="250"></textarea>
+            <div class="char-counter" id="improvements-counter">0/250 حرف</div>
           </div>
         </div>
 
-        <!-- الصور التوثيقية -->
+        <!-- الصور التوثيقية (صورتان كحد أقصى) -->
         <div class="form-section">
           <h3 class="section-title">
             <i class="fas fa-images"></i>
-            الصور التوثيقية الملونة
+            الصور التوثيقية (صورتان كحد أقصى)
           </h3>
           
           <div class="upload-area" onclick="document.getElementById('image-upload').click()">
             <i class="fas fa-cloud-upload-alt"></i>
             <p>انقر أو اسحب الصور هنا للرفع</p>
-            <small>يسمح بصورتين كحد أقصى (JPEG, PNG, GIF) - 5MB لكل صورة</small>
+            <small>يسمح بصورتين كحد أقصى (JPEG, PNG) - 5MB لكل صورة</small>
           </div>
           
           <input type="file" id="image-upload" accept="image/*" multiple 
@@ -1442,7 +1513,7 @@ textarea.form-control {
 
     <!-- لوحة التحكم -->
     <aside class="control-panel">
-      <h3><i class="fas fa-magic"></i> قوالب ملونة جاهزة</h3>
+      <h3><i class="fas fa-magic"></i> قوالب جاهزة</h3>
       
       <div class="quick-templates">
         <button class="template-btn" onclick="loadTemplate(1)">
@@ -1474,9 +1545,9 @@ textarea.form-control {
           معاينة التقرير
         </button>
         
-        <button class="action-btn btn-print" onclick="generateColoredReport()">
-          <i class="fas fa-print"></i>
-          إنشاء وطباعة
+        <button class="action-btn btn-print" onclick="generatePDF()">
+          <i class="fas fa-file-pdf"></i>
+          إنشاء PDF
         </button>
         
         <button class="action-btn btn-save" onclick="saveToLocalStorage()">
@@ -1490,22 +1561,21 @@ textarea.form-control {
         </button>
       </div>
       
-      <div class="alert alert-info" style="margin-top: 20px;">
+      <div class="alert alert-info" style="margin-top: 20px; position: static;">
         <i class="fas fa-info-circle"></i>
-        <span>التقارير الملونة تحفظ تلقائياً في المتصفح</span>
+        <span>التقارير تحفظ تلقائياً في المتصفح</span>
       </div>
       
-      <div class="color-palette" style="margin-top: 25px; padding: 15px; background: var(--light); border-radius: 10px;">
-        <h4 style="color: var(--primary-dark); margin-bottom: 10px; font-size: 16px;">
-          <i class="fas fa-palette"></i> ألوان التقرير
+      <div style="margin-top: 20px; padding: 15px; background: var(--light); border-radius: 10px;">
+        <h4 style="color: var(--primary); margin-bottom: 10px; font-size: 15px;">
+          <i class="fas fa-question-circle"></i> تلميحات
         </h4>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <div style="width: 25px; height: 25px; background: var(--primary); border-radius: 5px; cursor: pointer;" onclick="changeColorScheme('blue')"></div>
-          <div style="width: 25px; height: 25px; background: var(--secondary); border-radius: 5px; cursor: pointer;" onclick="changeColorScheme('green')"></div>
-          <div style="width: 25px; height: 25px; background: var(--accent); border-radius: 5px; cursor: pointer;" onclick="changeColorScheme('orange')"></div>
-          <div style="width: 25px; height: 25px; background: var(--purple); border-radius: 5px; cursor: pointer;" onclick="changeColorScheme('purple')"></div>
-          <div style="width: 25px; height: 25px; background: var(--pink); border-radius: 5px; cursor: pointer;" onclick="changeColorScheme('pink')"></div>
-        </div>
+        <ul style="font-size: 13px; color: var(--dark-gray); padding-right: 15px; line-height: 1.6;">
+          <li>كل مربع محدود بـ 250 حرف</li>
+          <li>يسمح بصورتين كحد أقصى</li>
+          <li>التقرير سيُنشأ في صفحة واحدة</li>
+          <li>يمكن حفظ المسودة لمواصلة لاحقاً</li>
+        </ul>
       </div>
     </aside>
   </div>
@@ -1523,9 +1593,9 @@ textarea.form-control {
     <span>معاينة</span>
   </button>
   
-  <button class="nav-btn" onclick="generateColoredReport()">
-    <i class="fas fa-print"></i>
-    <span>طباعة</span>
+  <button class="nav-btn" onclick="generatePDF()">
+    <i class="fas fa-file-pdf"></i>
+    <span>PDF</span>
   </button>
   
   <button class="nav-btn" onclick="saveToLocalStorage()">
@@ -1538,13 +1608,13 @@ textarea.form-control {
 <div class="preview-overlay" id="preview-overlay">
   <div class="preview-container">
     <div class="preview-header">
-      <h3><i class="fas fa-file-pdf"></i> معاينة التقرير الملون</h3>
+      <h3><i class="fas fa-file-pdf"></i> معاينة التقرير (صفحة واحدة)</h3>
       <button class="close-preview" onclick="hidePreview()">
         <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="report-content" id="report-content">
-      <!-- محتوى التقرير -->
+      <!-- محتوى التقرير سيتم إضافته هنا -->
     </div>
   </div>
 </div>
@@ -1553,134 +1623,92 @@ textarea.form-control {
 <div class="loading-overlay" id="loading-overlay">
   <div class="loading-content">
     <div class="loading-spinner"></div>
-    <p>جاري إنشاء التقرير الملون...</p>
+    <p>جاري إنشاء التقرير...</p>
     <small>يرجى الانتظار، التقرير قيد الإعداد</small>
   </div>
 </div>
 
+<!-- مكتبات jsPDF و html2canvas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
+// تهيئة jsPDF
+window.jsPDF = window.jspdf.jsPDF;
+
 // بيانات التطبيق
 const templates = {
   1: {
     name: "نشاط إثرائي",
     type: "اثرائي",
     goal: "تنمية مهارات التفكير النقدي والإبداعي لدى الطلاب المتميزين من خلال أنشطة متقدمة تحفز الابتكار وتطور القدرات البحثية، مع التركيز على تطوير مشاريع علمية مبتكرة.",
-    steps: `1. اختيار الطلاب الموهوبين بناءً على معايير محددة (التحصيل العلمي، الإبداع، المهارات)
-2. عقد ورش عمل متخصصة في التفكير الإبداعي وحل المشكلات
-3. تنفيذ مشاريع بحثية مصغرة تحت إشراف متخصصين
-4. تنظيم مسابقات علمية محفزة مع جوائز تشجيعية
-5. متابعة وتقييم فردي لكل طالب مع توفير تغذية راجعة
-6. تنظيم معرض لعرض إنجازات الطلاب`,
-    results: `• تطوير 8 مشاريع بحثية مبتكرة في مجالات متنوعة
-• تحسن ملحوظ في مهارات التحليل والتفكير النقدي بنسبة 40%
-• مشاركة ناجحة في 3 مسابقات علمية محلية وحصول على مراكز متقدمة
-• زيادة الثقة العلمية والمهارات العرضية لدى الطلاب
-• ارتفاع مستوى الدافعية للتعلم لدى المشاركين`,
-    recommendations: `• توسيع نطاق البرنامج ليشمل المزيد من الطلاب المتميزين
-• تدريب معلمين متخصصين في الإثراء العلمي والتفكير الإبداعي
-• إنشاء مكتبة مصادر رقمية متخصصة للطلاب الموهوبين
-• توثيق التجارب الناجحة ونشرها كنماذج استرشادية
-• إقامة شراكات مع مؤسسات بحثية وجامعات محلية`,
+    steps: "1. اختيار الطلاب الموهوبين بناءً على معايير محددة (التحصيل العلمي، الإبداع، المهارات)\n2. عقد ورش عمل متخصصة في التفكير الإبداعي وحل المشكلات\n3. تنفيذ مشاريع بحثية مصغرة تحت إشراف متخصصين\n4. تنظيم مسابقات علمية محفزة مع جوائز تشجيعية",
+    results: "• تطوير 8 مشاريع بحثية مبتكرة في مجالات متنوعة\n• تحسن ملحوظ في مهارات التحليل والتفكير النقدي بنسبة 40%\n• مشاركة ناجحة في 3 مسابقات علمية محلية\n• ارتفاع مستوى الدافعية للتعلم لدى المشاركين",
+    recommendations: "• توسيع نطاق البرنامج ليشمل المزيد من الطلاب المتميزين\n• تدريب معلمين متخصصين في الإثراء العلمي\n• إنشاء مكتبة مصادر رقمية متخصصة للطلاب الموهوبين\n• توثيق التجارب الناجحة ونشرها كنماذج استرشادية",
     target: "طلاب الصف الثالث الثانوي المتميزين أكاديمياً",
     subject: "الفيزياء المتقدمة",
-    strengths: "تنوع الأنشطة، جودة الإشراف، الموارد المتاحة، تفاعل الطلاب الإيجابي",
-    improvements: "توفير مزيد من الوقت، زيادة الميزانية، توسيع قاعدة المشاركة"
+    strengths: "تنوع الأنشطة، جودة الإشراف، الموارد المتاحة، تفاعل الطلاب الإيجابي، التخطيط المنظم، المتابعة المستمرة، الدعم الإداري الكامل",
+    improvements: "توفير مزيد من الوقت للأنشطة، زيادة الميزانية المخصصة، توسيع قاعدة المشاركة، توفير تدريب إضافي للمعلمين، تحسين التجهيزات التقنية"
   },
   2: {
     name: "خطة علاجية",
     type: "علاجي",
     goal: "معالجة الصعوبات القرائية والكتابية لدى الطلاب المتأخرين دراسياً في اللغة العربية وتحسين مهاراتهم الأساسية، ورفع مستوى الثقة لديهم في التعامل مع النصوص العربية.",
-    steps: `1. تشخيص فردي دقيق للصعوبات التعليمية لكل طالب
-2. تصميم خطط علاجية مخصصة تناسب مستوى كل طالب
-3. جلسات علاجية مكثفة أسبوعياً (3 جلسات أسبوعياً)
-4. استخدام وسائل تعليمية مساعدة وبرامج محوسبة
-5. متابعة أسرية منتظمة وتقييم دوري كل أسبوعين
-6. أنشطة تعزيزية وتطبيقات عملية`,
-    results: `• تحسن مهارات القراءة الجهرية والصامتة بنسبة 65%
-• تحسن مهارات الكتابة والإملاء بنسبة 55%
-• زيادة مشاركة الطلاب في الحصص والأنشطة الصفية
-• تحسن ملحوظ في الثقة بالنفس والتعبير الشفهي
-• ارتفاع مستوى الرضا لدى أولياء الأمور عن التحسن`,
-    recommendations: `• تطوير أدوات تشخيص أكثر دقة وشاملة
-• تدريب فرق علاجية متخصصة في صعوبات التعلم
-• إنشاء بنك أنشطة علاجية متدرجة الصعوبة
-• تعزيز الشراكة مع أولياء الأمور عبر ورش توعوية
-• توفير بيئة تعلم داعمة وخالية من التوتر`,
+    steps: "1. تشخيص فردي دقيق للصعوبات التعليمية لكل طالب\n2. تصميم خطط علاجية مخصصة تناسب مستوى كل طالب\n3. جلسات علاجية مكثفة أسبوعياً (3 جلسات أسبوعياً)\n4. استخدام وسائل تعليمية مساعدة وبرامج محوسبة",
+    results: "• تحسن مهارات القراءة الجهرية والصامتة بنسبة 65%\n• تحسن مهارات الكتابة والإملاء بنسبة 55%\n• زيادة مشاركة الطلاب في الحصص والأنشطة الصفية\n• تحسن ملحوظ في الثقة بالنفس والتعبير الشفهي",
+    recommendations: "• تطوير أدوات تشخيص أكثر دقة وشاملة\n• تدريب فرق علاجية متخصصة في صعوبات التعلم\n• إنشاء بنك أنشطة علاجية متدرجة الصعوبة\n• تعزيز الشراكة مع أولياء الأمور عبر ورش توعوية",
     target: "الطلاب المتأخرين دراسياً في مهارات اللغة العربية",
     subject: "اللغة العربية",
-    strengths: "الاهتمام الفردي، التنوع في الأساليب، المتابعة المستمرة",
-    improvements: "توفير موارد أكثر، زيادة وقت الجلسات، تدريب إضافي للمعلمين"
+    strengths: "الاهتمام الفردي بالطلاب، التنوع في الأساليب العلاجية، المتابعة المستمرة للتقدم، التعاون مع أولياء الأمور، استخدام التقنية المساعدة",
+    improvements: "توفير موارد تعليمية إضافية، زيادة وقت الجلسات العلاجية، تدريب إضافي للمعلمين، تحسين بيئة التعلم، توفير أجهزة وتقنيات حديثة"
   },
   3: {
     name: "نشاط إبداعي",
     type: "اثرائي",
     goal: "تنمية المهارات التقنية والبرمجية لدى الطلاب الموهوبين في مجال التكنولوجيا، وتهيئتهم لمتطلبات العصر الرقمي من خلال مشاريع تطبيقية مبتكرة.",
-    steps: `1. تدريب مكثف على أساسيات البرمجة والتفكير الحاسوبي
-2. ورش عمل في التصميم الرقمي وتطوير الواجهات
-3. مشاريع تقنية تطبيقية (تطبيقات - مواقع إلكترونية)
-4. مسابقات برمجية وجوائز تحفيزية
-5. زيارات ميدانية لشركات تقنية ومؤسسات ريادية
-6. تقديم مشاريع الطلاب في معرض تقني خاص`,
-    results: `• تصميم وتطوير 12 موقعاً إلكترونياً تعليمياً تفاعلياً
-• تطوير 5 تطبيقات تعليمية على منصتي Android و iOS
-• فوز الفريق في 3 مسابقات برمجية محلية وإقليمية
-• اكتشاف وتطوير 15 موهبة تقنية واعدة
-• إنشاء نادٍ تقني مدرسي نشط ومؤثر`,
-    recommendations: `• توفير معامل حاسوب متطورة مجهزة بأحدث البرامج
-• تأهيل مدربين متخصصين في المجال التقني والبرمجة
-• إنشاء نادي تقني دائم وتوفير ميزانية تشغيلية
-• إقامة شراكات مع مؤسسات تقنية وجامعات متخصصة
-• تطوير منهج تقني متكامل للمراحل الدراسية`,
+    steps: "1. تدريب مكثف على أساسيات البرمجة والتفكير الحاسوبي\n2. ورش عمل في التصميم الرقمي وتطوير الواجهات\n3. مشاريع تقنية تطبيقية (تطبيقات - مواقع إلكترونية)\n4. مسابقات برمجية وجوائز تحفيزية",
+    results: "• تصميم وتطوير 12 موقعاً إلكترونياً تعليمياً تفاعلياً\n• تطوير 5 تطبيقات تعليمية على منصتي Android و iOS\n• فوز الفريق في 3 مسابقات برمجية محلية وإقليمية\n• اكتشاف وتطوير 15 موهبة تقنية واعدة",
+    recommendations: "• توفير معامل حاسوب متطورة مجهزة بأحدث البرامج\n• تأهيل مدربين متخصصين في المجال التقني والبرمجة\n• إنشاء نادي تقني دائم وتوفير ميزانية تشغيلية\n• إقامة شراكات مع مؤسسات تقنية وجامعات متخصصة",
     target: "طلاب المرحلة الثانوية المهتمين بالتكنولوجيا والبرمجة",
     subject: "الحاسب الآلي وتقنية المعلومات",
-    strengths: "التطبيق العملي، الإبداع التقني، الدعم المتميز",
-    improvements: "تحديث الأجهزة، توسيع النطاق، زيادة الموارد"
+    strengths: "التطبيق العملي المباشر، الإبداع التقني المتميز، الدعم الفني والإداري الكامل، تفاعل الطلاب الإيجابي، التنظيم الجيد للورش والتدريبات",
+    improvements: "تحديث الأجهزة والتقنيات المستخدمة، توسيع نطاق المشاركة ليشمل المزيد من الطلاب، زيادة الموارد المالية لدعم المشاريع، تطوير منهج تدريبي أكثر شمولية"
   },
   4: {
     name: "تقرير تقويمي",
     type: "تقويمي",
     goal: "تقويم أداء الطلاب في نهاية الفصل الدراسي وتحليل نتائجهم، وتحديد مستوى تحقيق الأهداف التعليمية، ووضع خطط تطويرية للفصل القادم.",
-    steps: `1. إعداد اختبارات تقويمية شاملة تغطي جميع المهارات
-2. تحليل إحصائي دقيق لنتائج الاختبارات باستخدام أدوات متخصصة
-3. مقابلات فردية مع الطلاب لمناقشة النتائج والتحديات
-4. دراسة مؤشرات الأداء ومقارنتها مع المعايير الوطنية
-5. تقييم المنهج الدراسي وطرق التدريس المستخدمة
-6. ورش عمل مع المعلمين لتحليل النتائج ووضع الخطط`,
-    results: `• تحقيق 85% من الطلاب للمستوى المطلوب في جميع المواد
-• تحسن في متوسط الدرجات بنسبة 15% مقارنة بالفصل السابق
-• ارتفاع مؤشر الرضا عن العملية التعليمية إلى 88%
-• تحديد نقاط القوة والضعف بدقة للطلاب والمعلمين
-• تحسن في مهارات التقويم الذاتي لدى الطلاب`,
-    recommendations: `• تطوير استراتيجيات تدريس تتناسب مع أنماط التعلم المختلفة
-• تحسين الوسائل التعليمية وتوفير موارد تعليمية متنوعة
-• تنويع أساليب التقويم لتشمل المهارات العملية
-• تعزيز التعلم الذاتي والبحث العلمي لدى الطلاب
-• تطوير نظام متابعة فردي للطلاب المتأخرين`,
+    steps: "1. إعداد اختبارات تقويمية شاملة تغطي جميع المهارات\n2. تحليل إحصائي دقيق لنتائج الاختبارات باستخدام أدوات متخصصة\n3. مقابلات فردية مع الطلاب لمناقشة النتائج والتحديات\n4. دراسة مؤشرات الأداء ومقارنتها مع المعايير الوطنية",
+    results: "• تحقيق 85% من الطلاب للمستوى المطلوب في جميع المواد\n• تحسن في متوسط الدرجات بنسبة 15% مقارنة بالفصل السابق\n• ارتفاع مؤشر الرضا عن العملية التعليمية إلى 88%\n• تحديد نقاط القوة والضعف بدقة للطلاب والمعلمين",
+    recommendations: "• تطوير استراتيجيات تدريس تتناسب مع أنماط التعلم المختلفة\n• تحسين الوسائل التعليمية وتوفير موارد تعليمية متنوعة\n• تنويع أساليب التقويم لتشمل المهارات العملية\n• تعزيز التعلم الذاتي والبحث العلمي لدى الطلاب",
     target: "جميع طلاب الصف العاشر",
     subject: "الرياضيات والعلوم",
-    strengths: "الدقة في التحليل، الشمولية، المشاركة الفعالة",
-    improvements: "تطوير أدوات التقويم، زيادة التغذية الراجعة، تحسين التوقيت"
+    strengths: "الدقة العلمية في التحليل الإحصائي، الشمولية في التغطية، المشاركة الفعالة من الطلاب والمعلمين، الموضوعية في التقييم، الوضوح في عرض النتائج",
+    improvements: "تطوير أدوات التقويم لتكون أكثر شمولية، زيادة التغذية الراجعة للطلاب، تحسين توقيت الاختبارات التقويمية، تدريب المعلمين على استخدام أدوات تقييم حديثة"
   }
 };
 
 let uploadedImages = [];
-let currentColorScheme = 'blue';
 
 // تحميل القالب
 function loadTemplate(templateId) {
   const template = templates[templateId];
   if (!template) return;
   
-  // تعبئة الحقول
+  // قص النصوص لتناسب 250 حرف
+  const truncateText = (text, maxLength = 250) => {
+    return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
+  };
+  
+  // تعبئة الحقول مع قص النصوص
   document.getElementById('report-type').value = template.type;
-  document.getElementById('educational-goal').value = template.goal;
-  document.getElementById('implementation-steps').value = template.steps;
-  document.getElementById('achieved-results').value = template.results;
-  document.getElementById('recommendations').value = template.recommendations;
+  document.getElementById('educational-goal').value = truncateText(template.goal);
+  document.getElementById('implementation-steps').value = truncateText(template.steps);
+  document.getElementById('achieved-results').value = truncateText(template.results);
+  document.getElementById('recommendations').value = truncateText(template.recommendations);
   document.getElementById('target-audience').value = template.target;
   document.getElementById('subject').value = template.subject;
-  document.getElementById('strengths').value = template.strengths;
-  document.getElementById('improvements').value = template.improvements;
+  document.getElementById('strengths').value = truncateText(template.strengths);
+  document.getElementById('improvements').value = truncateText(template.improvements);
   
   // تحديث العدادات
   updateCharCounters();
@@ -1692,94 +1720,39 @@ function loadTemplate(templateId) {
 // تحديث عدادات الأحرف
 function updateCharCounters() {
   const fields = [
-    {id: 'educational-goal', counter: 'goal-counter', max: 300},
-    {id: 'implementation-steps', counter: 'steps-counter', max: 500},
-    {id: 'achieved-results', counter: 'results-counter', max: 400},
-    {id: 'recommendations', counter: 'rec-counter', max: 400}
+    {id: 'educational-goal', counter: 'goal-counter', max: 250},
+    {id: 'implementation-steps', counter: 'steps-counter', max: 250},
+    {id: 'achieved-results', counter: 'results-counter', max: 250},
+    {id: 'recommendations', counter: 'rec-counter', max: 250},
+    {id: 'strengths', counter: 'strengths-counter', max: 250},
+    {id: 'improvements', counter: 'improvements-counter', max: 250}
   ];
   
   fields.forEach(field => {
     const textarea = document.getElementById(field.id);
     const counter = document.getElementById(field.counter);
+    if (!textarea || !counter) return;
+    
     const length = textarea.value.length;
     const percentage = (length / field.max) * 100;
     
     counter.textContent = `${length}/${field.max} حرف`;
+    counter.className = 'char-counter' + (percentage >= 90 ? ' char-limit' : '');
     
-    // تغيير اللون حسب النسبة
-    counter.style.color = percentage >= 90 ? '#e74c3c' : 
-                         percentage >= 75 ? '#f39c12' : 
-                         '#27ae60';
+    // إضافة تحذير إذا تجاوز الحد
+    if (length > field.max) {
+      textarea.value = textarea.value.substring(0, field.max);
+      counter.textContent = `${field.max}/${field.max} حرف (تم قص النص)`;
+      showAlert(`تم قص النص في "${field.id}" ليتناسب مع الحد الأقصى (${field.max} حرف)`, 'warning');
+    }
   });
 }
 
-// إضافة مستمعين للأحداث
-document.addEventListener('DOMContentLoaded', function() {
-  // تحديث العدادات عند الكتابة
-  ['educational-goal', 'implementation-steps', 'achieved-results', 'recommendations'].forEach(id => {
-    document.getElementById(id).addEventListener('input', updateCharCounters);
-  });
-  
-  // تحميل المسودة المحفوظة
-  loadFromLocalStorage();
-  
-  // تعيين القيم الافتراضية
-  if (!document.getElementById('school-name').value) {
-    document.getElementById('school-name').value = "مدرسة النخبة العلمية الثانوية";
-  }
-  if (!document.getElementById('teacher-name').value) {
-    document.getElementById('teacher-name').value = "أحمد بن محمد العلي";
-  }
-  
-  // تحديث العدادات الأولية
-  updateCharCounters();
-  
-  // الترحيب
-  setTimeout(() => {
-    showAlert('مرحباً بك في نظام التقارير التعليمية الملونة!', 'info');
-  }, 1000);
-});
-
 // مسح النموذج مع تأكيد
 function showClearConfirmation() {
-  const modal = document.createElement('div');
-  modal.style.cssText = `
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0,0,0,0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 3000;
-    padding: 20px;
-    backdrop-filter: blur(10px);
-  `;
-  
-  modal.innerHTML = `
-    <div style="background: white; padding: 30px; border-radius: 15px; max-width: 400px; width: 100%; text-align: center;">
-      <div style="color: #e74c3c; font-size: 50px; margin-bottom: 20px;">
-        <i class="fas fa-exclamation-triangle"></i>
-      </div>
-      <h3 style="color: #2c3e50; margin-bottom: 15px;">تأكيد المسح</h3>
-      <p style="color: #566573; margin-bottom: 25px; line-height: 1.6;">
-        هل أنت متأكد من رغبتك في مسح جميع البيانات؟<br>
-        <small style="color: #95a5a6;">لن يمكنك استرجاع البيانات بعد المسح</small>
-      </p>
-      <div style="display: flex; gap: 15px; justify-content: center;">
-        <button onclick="clearForm()" style="background: #e74c3c; color: white; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-family: 'Cairo'; font-weight: bold; transition: all 0.3s;">
-          نعم، مسح الكل
-        </button>
-        <button onclick="this.closest('div').parentElement.remove()" style="background: #2ecc71; color: white; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-family: 'Cairo'; font-weight: bold; transition: all 0.3s;">
-          إلغاء
-        </button>
-      </div>
-    </div>
-  `;
-  
-  document.body.appendChild(modal);
+  if (confirm('هل أنت متأكد من رغبتك في مسح جميع البيانات؟\nلن يمكنك استرجاع البيانات بعد المسح.')) {
+    clearForm();
+  }
 }
 
 // مسح النموذج
@@ -1791,21 +1764,18 @@ function clearForm() {
   ];
   
   fields.forEach(fieldId => {
-    document.getElementById(fieldId).value = '';
+    const element = document.getElementById(fieldId);
+    if (element) element.value = '';
   });
   
   uploadedImages = [];
-  document.getElementById('image-preview').innerHTML = '';
-  document.getElementById('image-upload').value = '';
+  const preview = document.getElementById('image-preview');
+  if (preview) preview.innerHTML = '';
   
-  document.getElementById('report-type').value = 'اثرائي';
-  document.getElementById('education-department').value = '';
-  document.getElementById('semester').value = 'الأول';
+  const uploadInput = document.getElementById('image-upload');
+  if (uploadInput) uploadInput.value = '';
   
   updateCharCounters();
-  
-  document.querySelector('div[style*="position: fixed"]')?.remove();
-  
   showAlert('تم مسح جميع البيانات بنجاح', 'success');
 }
 
@@ -1813,6 +1783,8 @@ function clearForm() {
 function handleImageUpload(input) {
   const files = Array.from(input.files).slice(0, 2);
   const preview = document.getElementById('image-preview');
+  
+  if (!preview) return;
   
   if (files.length > 2) {
     showAlert('يمكنك رفع صورتين كحد أقصى', 'error');
@@ -1864,6 +1836,8 @@ function handleImageUpload(input) {
 function removeImage(index) {
   uploadedImages.splice(index, 1);
   const preview = document.getElementById('image-preview');
+  if (!preview) return;
+  
   preview.innerHTML = '';
   
   uploadedImages.forEach((img, i) => {
@@ -1884,23 +1858,23 @@ function saveToLocalStorage() {
   const data = collectFormData();
   
   try {
-    localStorage.setItem('colored_report_draft', JSON.stringify({
+    localStorage.setItem('educational_report_draft', JSON.stringify({
       ...data,
       images: uploadedImages,
-      colorScheme: currentColorScheme,
       savedAt: new Date().toLocaleString('ar-SA')
     }));
     
     showAlert('تم حفظ المسودة بنجاح في ذاكرة المتصفح', 'success');
   } catch (e) {
     showAlert('حدث خطأ أثناء حفظ المسودة', 'error');
+    console.error('Error saving to localStorage:', e);
   }
 }
 
 // تحميل من localStorage
 function loadFromLocalStorage() {
   try {
-    const saved = localStorage.getItem('colored_report_draft');
+    const saved = localStorage.getItem('educational_report_draft');
     if (!saved) return;
     
     if (confirm('تم العثور على مسودة محفوظة. هل تريد تحميلها؟')) {
@@ -1926,10 +1900,6 @@ function loadFromLocalStorage() {
         updateImagePreview();
       }
       
-      if (data.colorScheme) {
-        changeColorScheme(data.colorScheme);
-      }
-      
       updateCharCounters();
       showAlert('تم تحميل المسودة بنجاح', 'success');
     }
@@ -1941,6 +1911,8 @@ function loadFromLocalStorage() {
 // تحديث معاينة الصور
 function updateImagePreview() {
   const preview = document.getElementById('image-preview');
+  if (!preview) return;
+  
   preview.innerHTML = '';
   
   uploadedImages.forEach((img, i) => {
@@ -1956,55 +1928,6 @@ function updateImagePreview() {
   });
 }
 
-// تغيير نظام الألوان
-function changeColorScheme(scheme) {
-  currentColorScheme = scheme;
-  
-  const root = document.documentElement;
-  const colors = {
-    blue: {
-      primary: '#2E86C1',
-      primaryLight: '#5DADE2',
-      primaryDark: '#1B4F72',
-      secondary: '#27AE60'
-    },
-    green: {
-      primary: '#27AE60',
-      primaryLight: '#58D68D',
-      primaryDark: '#196F3D',
-      secondary: '#2E86C1'
-    },
-    orange: {
-      primary: '#E67E22',
-      primaryLight: '#F39C12',
-      primaryDark: '#CA6F1E',
-      secondary: '#2E86C1'
-    },
-    purple: {
-      primary: '#8E44AD',
-      primaryLight: '#BB8FCE',
-      primaryDark: '#6C3483',
-      secondary: '#27AE60'
-    },
-    pink: {
-      primary: '#E84393',
-      primaryLight: '#FD79A8',
-      primaryDark: '#B33771',
-      secondary: '#27AE60'
-    }
-  };
-  
-  const schemeColors = colors[scheme];
-  if (!schemeColors) return;
-  
-  root.style.setProperty('--primary', schemeColors.primary);
-  root.style.setProperty('--primary-light', schemeColors.primaryLight);
-  root.style.setProperty('--primary-dark', schemeColors.primaryDark);
-  root.style.setProperty('--secondary', schemeColors.secondary);
-  
-  showAlert(`تم تغيير الألوان إلى ${scheme === 'blue' ? 'الأزرق' : scheme === 'green' ? 'الأخضر' : scheme === 'orange' ? 'البرتقالي' : scheme === 'purple' ? 'البنفسجي' : 'الوردي'}`, 'info');
-}
-
 // عرض المعاينة
 function showPreview() {
   const data = collectFormData();
@@ -2014,7 +1937,7 @@ function showPreview() {
     return;
   }
   
-  buildColoredReport(data);
+  buildReportPreview(data);
   document.getElementById('preview-overlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
@@ -2025,12 +1948,12 @@ function hidePreview() {
   document.body.style.overflow = 'auto';
 }
 
-// إنشاء تقرير ملون
-function generateColoredReport() {
+// إنشاء PDF
+function generatePDF() {
   const data = collectFormData();
   
   if (!validateForm()) {
-    showAlert('الرجاء تعبئة الحقول المطلوبة قبل الطباعة', 'error');
+    showAlert('الرجاء تعبئة الحقول المطلوبة قبل إنشاء PDF', 'error');
     return;
   }
   
@@ -2040,22 +1963,18 @@ function generateColoredReport() {
   
   // محاكاة وقت التحميل
   setTimeout(() => {
-    buildColoredReport(data);
+    buildReportPreview(data);
     
     // انتظار لحظة لضمان تحميل الصور
     setTimeout(() => {
-      // حفظ التقرير كصورة ثم PDF
-      saveColoredReportAsImage();
-      
+      generatePDFFromPreview();
       loadingOverlay.style.display = 'none';
-      
-      showAlert('تم إنشاء التقرير الملون بنجاح وسيبدأ التنزيل الآن', 'success');
     }, 1000);
   }, 1500);
 }
 
-// حفظ التقرير كصورة
-function saveColoredReportAsImage() {
+// إنشاء PDF من المعاينة
+function generatePDFFromPreview() {
   const reportContent = document.getElementById('report-content');
   
   html2canvas(reportContent, {
@@ -2065,47 +1984,48 @@ function saveColoredReportAsImage() {
     backgroundColor: '#ffffff',
     logging: false,
     windowWidth: reportContent.scrollWidth,
-    windowHeight: reportContent.scrollHeight
+    windowHeight: reportContent.scrollHeight,
+    onclone: function(clonedDoc) {
+      // تحسين العناصر في النسخة المستنسخة للطباعة
+      const clonedContent = clonedDoc.getElementById('report-content');
+      if (clonedContent) {
+        clonedContent.style.padding = '20px';
+        clonedContent.style.fontSize = '14px';
+      }
+    }
   }).then(canvas => {
-    // تحويل Canvas إلى صورة
-    const imgData = canvas.toDataURL('image/jpeg', 1.0);
+    const imgData = canvas.toDataURL('image/jpeg', 0.9);
     
-    // إنشاء PDF باستخدام الصورة
+    // إنشاء PDF
     const pdf = new jsPDF({
       orientation: 'portrait',
       unit: 'mm',
       format: 'a4'
     });
     
-    const imgWidth = 210; // A4 width in mm
-    const pageHeight = 297; // A4 height in mm
+    const imgWidth = 190;
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
     
-    let heightLeft = imgHeight;
-    let position = 0;
-    
-    // إضافة الصورة الأولى
-    pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
-    heightLeft -= pageHeight;
-    
-    // إضافة صفحات إضافية إذا لزم الأمر
-    while (heightLeft >= 0) {
-      position = heightLeft - imgHeight;
-      pdf.addPage();
-      pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-    }
+    // إضافة الصورة إلى PDF
+    pdf.addImage(imgData, 'JPEG', 10, 10, imgWidth, imgHeight);
     
     // حفظ الملف
-    const fileName = `تقرير_تعليمي_ملون_${new Date().toISOString().split('T')[0]}.pdf`;
+    const fileName = `تقرير_تعليمي_${new Date().toISOString().split('T')[0]}.pdf`;
     pdf.save(fileName);
+    
+    showAlert('تم إنشاء وتحميل ملف PDF بنجاح', 'success');
+  }).catch(error => {
+    console.error('Error generating PDF:', error);
+    showAlert('حدث خطأ أثناء إنشاء PDF', 'error');
+    document.getElementById('loading-overlay').style.display = 'none';
   });
 }
 
-// بناء التقرير الملون
-function buildColoredReport(data) {
+// بناء معاينة التقرير (صفحة واحدة)
+function buildReportPreview(data) {
   const content = document.getElementById('report-content');
-  
+  if (!content) return;
+
   const getDepartmentName = (value) => {
     const departments = {
       'الرياض': 'الإدارة العامة للتعليم بمنطقة الرياض',
@@ -2138,195 +2058,135 @@ function buildColoredReport(data) {
     return `${date}/${month}/${year} م - ${hijriYear} هـ`;
   };
 
-  // تحديد ألوان حسب النظام المختار
-  const getColors = () => {
-    const colors = {
-      blue: {
-        primary: '#2E86C1',
-        secondary: '#27AE60',
-        accent: '#E67E22'
-      },
-      green: {
-        primary: '#27AE60',
-        secondary: '#2E86C1',
-        accent: '#E67E22'
-      },
-      orange: {
-        primary: '#E67E22',
-        secondary: '#2E86C1',
-        accent: '#27AE60'
-      },
-      purple: {
-        primary: '#8E44AD',
-        secondary: '#27AE60',
-        accent: '#E67E22'
-      },
-      pink: {
-        primary: '#E84393',
-        secondary: '#27AE60',
-        accent: '#2E86C1'
-      }
-    };
-    return colors[currentColorScheme] || colors.blue;
+  // قص النص إذا تجاوز 250 حرف
+  const truncateForBox = (text, maxLength = 250) => {
+    if (!text) return 'لم يتم إضافة محتوى';
+    return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
   };
 
-  const colors = getColors();
-
   content.innerHTML = `
-    <div class="report-header" style="background: linear-gradient(135deg, ${colors.primary}20, ${colors.secondary}20); border-bottom: 4px solid ${colors.primary};">
-      <h1 style="color: ${colors.primary};">وزارة التعليم</h1>
-      <h2 style="color: ${colors.secondary};">${getDepartmentName(data.department)}</h2>
-      <h3 style="color: #2C3E50;">${data.school}</h3>
-      <div class="report-date" style="background: white; border: 2px solid ${colors.accent}; color: ${colors.accent};">
+    <!-- رأس التقرير -->
+    <div style="text-align: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #1B4F72;">
+      <h1 style="color: #1B4F72; font-size: 24px; margin-bottom: 10px;">وزارة التعليم</h1>
+      <h2 style="color: #27AE60; font-size: 18px; margin-bottom: 8px;">${getDepartmentName(data.department)}</h2>
+      <h3 style="color: #2C3E50; font-size: 16px; margin-bottom: 10px;">${data.school}</h3>
+      <div style="background: #E67E22; color: white; padding: 8px 20px; border-radius: 20px; display: inline-block; font-weight: bold;">
         <i class="fas fa-calendar-alt" style="margin-left: 8px;"></i>
         ${getCurrentDate()} | ${getReportTypeName(data.type)} | الفصل ${data.semester}
       </div>
     </div>
     
-    <div class="report-section" style="border-right-color: ${colors.primary}; background: linear-gradient(135deg, ${colors.primary}08, white);">
-      <div class="report-section-title" style="border-bottom-color: ${colors.primary}; color: ${colors.primary};">
-        <i class="fas fa-info-circle" style="background: linear-gradient(135deg, ${colors.primary}, ${colors.primary}cc);"></i>
-        المعلومات الأساسية
-      </div>
-      <div class="report-section-content" style="border-right-color: ${colors.primary}30;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-          <div style="background: ${colors.primary}10; padding: 12px; border-radius: 8px; border-right: 3px solid ${colors.primary};">
-            <strong style="color: ${colors.primary};">المادة الدراسية:</strong><br>
-            ${data.subject || 'غير محدد'}
-          </div>
-          <div style="background: ${colors.secondary}10; padding: 12px; border-radius: 8px; border-right: 3px solid ${colors.secondary};">
-            <strong style="color: ${colors.secondary};">الفئة المستهدفة:</strong><br>
-            ${data.target || 'غير محدد'}
-          </div>
-          <div style="background: ${colors.accent}10; padding: 12px; border-radius: 8px; border-right: 3px solid ${colors.accent};">
-            <strong style="color: ${colors.accent};">الفصل الدراسي:</strong><br>
-            الفصل ${data.semester}
-          </div>
+    <!-- المعلومات الأساسية -->
+    <div style="background: #F8F9FA; padding: 15px; border-radius: 10px; margin-bottom: 20px; border-right: 4px solid #2E86C1;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+        <div style="background: white; padding: 12px; border-radius: 8px; border: 2px solid #EAECEE;">
+          <strong style="color: #1B4F72;">المادة الدراسية:</strong><br>
+          ${data.subject || 'غير محدد'}
+        </div>
+        <div style="background: white; padding: 12px; border-radius: 8px; border: 2px solid #EAECEE;">
+          <strong style="color: #1B4F72;">الفئة المستهدفة:</strong><br>
+          ${data.target || 'غير محدد'}
         </div>
       </div>
     </div>
     
-    <div class="report-section" style="border-right-color: ${colors.secondary}; background: linear-gradient(135deg, ${colors.secondary}08, white);">
-      <div class="report-section-title" style="border-bottom-color: ${colors.secondary}; color: ${colors.secondary};">
-        <i class="fas fa-bullseye" style="background: linear-gradient(135deg, ${colors.secondary}, ${colors.secondary}cc);"></i>
-        الهدف التربوي
-      </div>
-      <div class="report-section-content" style="border-right-color: ${colors.secondary}30; background: linear-gradient(135deg, ${colors.secondary}05, white);">
-        ${data.goal}
+    <!-- الهدف التربوي (أخضر - أعلى الصفحة) -->
+    <div class="goal-section">
+      <h3><i class="fas fa-bullseye"></i> الهدف التربوي</h3>
+      <div class="goal-content">
+        ${data.goal || 'لم يتم تحديد الهدف التربوي'}
       </div>
     </div>
     
-    <div class="report-section" style="border-right-color: ${colors.primary}; background: linear-gradient(135deg, ${colors.primary}08, white);">
-      <div class="report-section-title" style="border-bottom-color: ${colors.primary}; color: ${colors.primary};">
-        <i class="fas fa-tasks" style="background: linear-gradient(135deg, ${colors.primary}, ${colors.primary}cc);"></i>
-        إجراءات التنفيذ
-      </div>
-      <div class="report-section-content" style="border-right-color: ${colors.primary}30; background: linear-gradient(135deg, ${colors.primary}05, white);">
-        ${data.steps || 'لم يتم تحديد إجراءات التنفيذ'}
-      </div>
-    </div>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
-      <div class="report-section" style="border-right-color: ${colors.secondary}; background: linear-gradient(135deg, ${colors.secondary}08, white);">
-        <div class="report-section-title" style="border-bottom-color: ${colors.secondary}; color: ${colors.secondary};">
-          <i class="fas fa-chart-line" style="background: linear-gradient(135deg, ${colors.secondary}, ${colors.secondary}cc);"></i>
-          النتائج المتحققة
-        </div>
-        <div class="report-section-content" style="border-right-color: ${colors.secondary}30; background: linear-gradient(135deg, ${colors.secondary}05, white);">
-          ${data.results || 'لم يتم تحديد النتائج'}
+    <!-- الصف الثاني: إجراءات التنفيذ والنتائج المتحققة -->
+    <div class="row-2">
+      <div class="implementation-box">
+        <h4><i class="fas fa-tasks"></i> إجراءات التنفيذ</h4>
+        <div class="implementation-content">
+          ${truncateForBox(data.steps)}
         </div>
       </div>
       
-      <div class="report-section" style="border-right-color: ${colors.accent}; background: linear-gradient(135deg, ${colors.accent}08, white);">
-        <div class="report-section-title" style="border-bottom-color: ${colors.accent}; color: ${colors.accent};">
-          <i class="fas fa-comments" style="background: linear-gradient(135deg, ${colors.accent}, ${colors.accent}cc);"></i>
-          التوصيات والمقترحات
-        </div>
-        <div class="report-section-content" style="border-right-color: ${colors.accent}30; background: linear-gradient(135deg, ${colors.accent}05, white);">
-          ${data.recommendations || 'لم يتم تحديد توصيات'}
+      <div class="results-box">
+        <h4><i class="fas fa-chart-line"></i> النتائج المتحققة</h4>
+        <div class="results-content">
+          ${truncateForBox(data.results)}
         </div>
       </div>
     </div>
     
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
-      <div class="report-section" style="border-right-color: ${colors.primary}; background: linear-gradient(135deg, ${colors.primary}08, white);">
-        <div class="report-section-title" style="border-bottom-color: ${colors.primary}; color: ${colors.primary};">
-          <i class="fas fa-thumbs-up" style="background: linear-gradient(135deg, ${colors.primary}, ${colors.primary}cc);"></i>
-          نقاط القوة
-        </div>
-        <div class="report-section-content" style="border-right-color: ${colors.primary}30; background: linear-gradient(135deg, ${colors.primary}05, white);">
-          ${data.strengths || 'لم يتم تحديد نقاط القوة'}
+    <!-- الصف الثالث: التوصيات ونقاط القوة -->
+    <div class="row-3">
+      <div class="recommendations-box">
+        <h4><i class="fas fa-comments"></i> التوصيات والمقترحات</h4>
+        <div class="recommendations-content">
+          ${truncateForBox(data.recommendations)}
         </div>
       </div>
       
-      <div class="report-section" style="border-right-color: ${colors.secondary}; background: linear-gradient(135deg, ${colors.secondary}08, white);">
-        <div class="report-section-title" style="border-bottom-color: ${colors.secondary}; color: ${colors.secondary};">
-          <i class="fas fa-lightbulb" style="background: linear-gradient(135deg, ${colors.secondary}, ${colors.secondary}cc);"></i>
-          فرص التحسين
-        </div>
-        <div class="report-section-content" style="border-right-color: ${colors.secondary}30; background: linear-gradient(135deg, ${colors.secondary}05, white);">
-          ${data.improvements || 'لم يتم تحديد فرص التحسين'}
+      <div class="strengths-box">
+        <h4><i class="fas fa-thumbs-up"></i> نقاط القوة</h4>
+        <div class="strengths-content">
+          ${truncateForBox(data.strengths)}
         </div>
       </div>
     </div>
     
+    <!-- فرص التحسين (برتقالي - أسفل الصفحة) -->
+    <div class="improvements-box">
+      <h4><i class="fas fa-lightbulb"></i> فرص التحسين</h4>
+      <div class="improvements-content">
+        ${truncateForBox(data.improvements)}
+      </div>
+    </div>
+    
+    <!-- الصور التوثيقية (صورتان كحد أقصى) -->
     ${uploadedImages.length > 0 ? `
-      <div class="report-section" style="border-right-color: #8E44AD; background: linear-gradient(135deg, #8E44AD08, white);">
-        <div class="report-section-title" style="border-bottom-color: #8E44AD; color: #8E44AD;">
-          <i class="fas fa-images" style="background: linear-gradient(135deg, #8E44AD, #8E44ADcc);"></i>
-          الصور التوثيقية
-        </div>
+      <div class="images-section">
+        <h4><i class="fas fa-images"></i> الصور التوثيقية</h4>
         <div class="report-images">
           ${uploadedImages.map((img, index) => `
-            <div class="report-image" style="border: 2px solid ${colors.primary}40;">
+            <div class="report-image">
               <img src="${img.data}" alt="صورة توثيقية ${index + 1}">
-              <div style="padding: 8px; background: ${colors.primary}10; text-align: center; color: ${colors.primary}; font-size: 14px; border-top: 2px solid ${colors.primary}30;">
-                <i class="fas fa-camera" style="margin-left: 5px;"></i>
-                صورة ${index + 1}
-              </div>
             </div>
           `).join('')}
         </div>
       </div>
     ` : ''}
     
-    <div class="report-signatures" style="background: linear-gradient(135deg, ${colors.primary}05, ${colors.secondary}05); border-top: 2px solid ${colors.primary}50;">
-      <div class="signature-box" style="border-top: 4px solid ${colors.primary};">
-        <div class="signature-title" style="color: ${colors.primary};">
+    <!-- التوقيعات -->
+    <div class="report-signatures">
+      <div class="signature-box">
+        <div class="signature-title">
           <i class="fas fa-chalkboard-teacher"></i>
           المعلم / المشرف
         </div>
-        <div class="signature-line" style="background: linear-gradient(90deg, transparent, ${colors.primary}, transparent);"></div>
-        <div class="signature-name" style="background: ${colors.primary}10; border: 2px dashed ${colors.primary}40;">
+        <div class="signature-line"></div>
+        <div class="signature-name">
           ${data.teacher}
         </div>
       </div>
       
-      <div class="signature-box" style="border-top: 4px solid ${colors.secondary};">
-        <div class="signature-title" style="color: ${colors.secondary};">
+      <div class="signature-box">
+        <div class="signature-title">
           <i class="fas fa-user-tie"></i>
           مدير المدرسة
         </div>
-        <div class="signature-line" style="background: linear-gradient(90deg, transparent, ${colors.secondary}, transparent);"></div>
-        <div class="signature-name" style="background: ${colors.secondary}10; border: 2px dashed ${colors.secondary}40;">
+        <div class="signature-line"></div>
+        <div class="signature-name">
           ${data.principal || '.................'}
         </div>
       </div>
     </div>
     
-    <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, ${colors.accent}05, white); border-radius: 12px; border: 2px solid ${colors.accent}30; text-align: center;">
-      <div style="color: ${colors.accent}; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 10px;">
-        <i class="fas fa-qrcode"></i>
-        <span>تم إنشاء هذا التقرير بواسطة نظام التقارير التعليمية الملون</span>
+    <!-- تذييل الصفحة -->
+    <div style="margin-top: 30px; padding: 15px; background: #F8F9FA; border-radius: 10px; text-align: center; color: #566573; font-size: 13px; border-top: 2px solid #EAECEE;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 5px;">
+        <i class="fas fa-qrcode" style="color: #2E86C1;"></i>
+        <span>تم إنشاء هذا التقرير بواسطة أداة التقارير التعليمية الذكية - وزارة التعليم</span>
       </div>
-      <div style="color: #95a5a6; font-size: 12px; margin-top: 10px;">
-        ${new Date().toLocaleString('ar-SA', { 
-          year: 'numeric', 
-          month: 'long', 
-          day: 'numeric',
-          hour: '2-digit',
-          minute: '2-digit'
-        })}
+      <div>
+        ${new Date().toLocaleString('ar-SA')}
       </div>
     </div>
   `;
@@ -2336,19 +2196,19 @@ function buildColoredReport(data) {
 function collectFormData() {
   return {
     department: document.getElementById('education-department').value,
-    school: document.getElementById('school-name').value.trim(),
+    school: document.getElementById('school-name') ? document.getElementById('school-name').value.trim() : '',
     type: document.getElementById('report-type').value,
-    target: document.getElementById('target-audience').value.trim(),
+    target: document.getElementById('target-audience') ? document.getElementById('target-audience').value.trim() : '',
     semester: document.getElementById('semester').value,
-    subject: document.getElementById('subject').value.trim(),
-    goal: document.getElementById('educational-goal').value.trim(),
-    steps: document.getElementById('implementation-steps').value.trim(),
-    results: document.getElementById('achieved-results').value.trim(),
-    recommendations: document.getElementById('recommendations').value.trim(),
-    strengths: document.getElementById('strengths').value.trim(),
-    improvements: document.getElementById('improvements').value.trim(),
-    teacher: document.getElementById('teacher-name').value.trim(),
-    principal: document.getElementById('principal-name').value.trim()
+    subject: document.getElementById('subject') ? document.getElementById('subject').value.trim() : '',
+    goal: document.getElementById('educational-goal') ? document.getElementById('educational-goal').value.trim() : '',
+    steps: document.getElementById('implementation-steps') ? document.getElementById('implementation-steps').value.trim() : '',
+    results: document.getElementById('achieved-results') ? document.getElementById('achieved-results').value.trim() : '',
+    recommendations: document.getElementById('recommendations') ? document.getElementById('recommendations').value.trim() : '',
+    strengths: document.getElementById('strengths') ? document.getElementById('strengths').value.trim() : '',
+    improvements: document.getElementById('improvements') ? document.getElementById('improvements').value.trim() : '',
+    teacher: document.getElementById('teacher-name') ? document.getElementById('teacher-name').value.trim() : '',
+    principal: document.getElementById('principal-name') ? document.getElementById('principal-name').value.trim() : ''
   };
 }
 
@@ -2368,6 +2228,14 @@ function validateForm() {
 
 // عرض التنبيهات
 function showAlert(message, type = 'info') {
+  // إزالة التنبيهات السابقة
+  const existingAlerts = document.querySelectorAll('.alert');
+  existingAlerts.forEach(alert => {
+    if (alert.parentNode) {
+      alert.parentNode.removeChild(alert);
+    }
+  });
+  
   const alert = document.createElement('div');
   alert.className = `alert alert-${type}`;
   alert.innerHTML = `
@@ -2377,20 +2245,17 @@ function showAlert(message, type = 'info') {
     <span>${message}</span>
   `;
   
-  const container = document.querySelector('.container');
-  container.prepend(alert);
+  document.body.appendChild(alert);
   
-  // تحريك التنبيه
-  alert.style.animation = 'slideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-  
+  // إخفاء التنبيه بعد 5 ثواني
   setTimeout(() => {
     if (alert.parentNode) {
-      alert.style.animation = 'fadeOut 0.3s ease';
+      alert.style.animation = 'fadeOut 0.5s ease';
       setTimeout(() => {
         if (alert.parentNode) {
           alert.remove();
         }
-      }, 300);
+      }, 500);
     }
   }, 5000);
 }
@@ -2411,6 +2276,93 @@ function setActiveNavBtn(index) {
     }
   });
 }
+
+// إضافة مستمعين للأحداث عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+  // تحديث العدادات عند الكتابة
+  const textareas = ['educational-goal', 'implementation-steps', 'achieved-results', 
+                     'recommendations', 'strengths', 'improvements'];
+  
+  textareas.forEach(id => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.addEventListener('input', updateCharCounters);
+      element.addEventListener('input', function() {
+        if (this.value.length > 250) {
+          this.value = this.value.substring(0, 250);
+          updateCharCounters();
+        }
+      });
+    }
+  });
+  
+  // تحميل المسودة المحفوظة
+  loadFromLocalStorage();
+  
+  // تعيين القيم الافتراضية إذا كانت فارغة
+  if (!document.getElementById('school-name').value) {
+    document.getElementById('school-name').value = "مدرسة النخبة العلمية الثانوية";
+  }
+  
+  if (!document.getElementById('teacher-name').value) {
+    document.getElementById('teacher-name').value = "أحمد بن محمد العلي";
+  }
+  
+  // تحديث العدادات الأولية
+  updateCharCounters();
+  
+  // الترحيب
+  setTimeout(() => {
+    showAlert('مرحباً بك في نظام التقارير التعليمية!', 'info');
+  }, 1000);
+  
+  // تحسين تجربة اللمس للجوال
+  if ('ontouchstart' in window) {
+    document.querySelectorAll('.action-btn, .template-btn').forEach(btn => {
+      btn.addEventListener('touchstart', function() {
+        this.style.transform = 'scale(0.98)';
+      });
+      
+      btn.addEventListener('touchend', function() {
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 150);
+      });
+    });
+  }
+  
+  // دعم سحب وإفلات الصور
+  const uploadArea = document.querySelector('.upload-area');
+  if (uploadArea) {
+    uploadArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadArea.style.borderColor = '#2E86C1';
+      uploadArea.style.background = 'rgba(46, 134, 193, 0.1)';
+    });
+    
+    uploadArea.addEventListener('dragleave', () => {
+      uploadArea.style.borderColor = '';
+      uploadArea.style.background = '';
+    });
+    
+    uploadArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadArea.style.borderColor = '';
+      uploadArea.style.background = '';
+      
+      const files = Array.from(e.dataTransfer.files);
+      const input = document.getElementById('image-upload');
+      
+      if (input && files.length > 0) {
+        const dataTransfer = new DataTransfer();
+        files.slice(0, 2).forEach(file => dataTransfer.items.add(file));
+        input.files = dataTransfer.files;
+        
+        handleImageUpload(input);
+      }
+    });
+  }
+});
 
 // إغلاق التنبيه بالنقر
 document.addEventListener('click', function(e) {
@@ -2433,142 +2385,24 @@ document.addEventListener('keydown', function(e) {
 });
 
 // إغلاق المعاينة بالنقر خارجها
-document.getElementById('preview-overlay').addEventListener('click', function(e) {
-  if (e.target === this) {
-    hidePreview();
+const previewOverlay = document.getElementById('preview-overlay');
+if (previewOverlay) {
+  previewOverlay.addEventListener('click', function(e) {
+    if (e.target === this) {
+      hidePreview();
+    }
+  });
+}
+
+// إضافة أنماط CSS للـ fadeOut
+const fadeOutStyle = document.createElement('style');
+fadeOutStyle.textContent = `
+  @keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-20px); }
   }
-});
-
-// دعم سحب وإفلات الصور
-const uploadArea = document.querySelector('.upload-area');
-uploadArea.addEventListener('dragover', (e) => {
-  e.preventDefault();
-  uploadArea.style.borderColor = 'var(--primary)';
-  uploadArea.style.background = 'rgba(46, 134, 193, 0.15)';
-  uploadArea.style.transform = 'scale(1.02)';
-});
-
-uploadArea.addEventListener('dragleave', () => {
-  uploadArea.style.borderColor = '';
-  uploadArea.style.background = '';
-  uploadArea.style.transform = '';
-});
-
-uploadArea.addEventListener('drop', (e) => {
-  e.preventDefault();
-  uploadArea.style.borderColor = '';
-  uploadArea.style.background = '';
-  uploadArea.style.transform = '';
-  
-  const files = Array.from(e.dataTransfer.files);
-  const input = document.getElementById('image-upload');
-  
-  // إنشاء DataTransfer object لتحديث الملفات
-  const dataTransfer = new DataTransfer();
-  files.forEach(file => dataTransfer.items.add(file));
-  input.files = dataTransfer.files;
-  
-  handleImageUpload(input);
-});
-
-// تحسين تجربة اللمس
-document.addEventListener('DOMContentLoaded', function() {
-  // تحميل المسودة المحفوظة
-  loadFromLocalStorage();
-  
-  // إضافة تأثير اللمس للأزرار
-  document.querySelectorAll('.action-btn, .template-btn').forEach(btn => {
-    btn.addEventListener('touchstart', function() {
-      this.style.transform = 'scale(0.98)';
-    });
-    
-    btn.addEventListener('touchend', function() {
-      this.style.transform = '';
-    });
-  });
-  
-  // إضافة مقياس الأحرف
-  const style = document.createElement('style');
-  style.textContent = `
-    .char-counter {
-      text-align: left;
-      font-size: 12px;
-      margin-top: 5px;
-      padding: 4px 8px;
-      background: rgba(46, 134, 193, 0.05);
-      border-radius: 4px;
-      display: inline-block;
-      border-right: 2px solid var(--primary);
-    }
-    
-    @keyframes fadeOut {
-      from { opacity: 1; transform: translateX(0); }
-      to { opacity: 0; transform: translateX(30px); }
-    }
-    
-    .form-hint {
-      font-size: 13px;
-      color: var(--dark-gray);
-      margin-top: 5px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    
-    .form-hint i {
-      color: var(--accent);
-    }
-  `;
-  document.head.appendChild(style);
-});
-
-// التمرير السلس
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    if (targetId === '#') return;
-    
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
-
-// إضافة تأثيرات للصور عند التمرير
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, observerOptions);
-
-// مراقبة عناصر التقرير
-document.querySelectorAll('.report-section, .report-image').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  observer.observe(el);
-});
-</script>
-
-<!-- إضافة مكتبات jsPDF و html2canvas -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script>
-// تهيئة jsPDF
-window.jsPDF = window.jspdf.jsPDF;
+`;
+document.head.appendChild(fadeOutStyle);
 </script>
 </body>
 </html>
