@@ -1,4 +1,3 @@
-
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -22,7 +21,7 @@
   --success: #27AE60;
   --warning: #F39C12;
   --danger: #E74C3C;
-  --border-radius: 10px;
+  --border-radius: 12px;
   --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   --box-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.12);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -47,16 +46,16 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 12px;
+  padding: 15px;
 }
 
-/* الهيدر مع شعار الوزارة */
+/* الهيدر مع خلفية شعار الوزارة */
 .header {
-  background: linear-gradient(rgba(27, 79, 114, 0.9), rgba(27, 79, 114, 0.95)), 
-              url('https://i.ibb.co/kVWFFwhW/9-C92-E57-B-23-FA-479-D-A024-1-D5-F871-B4-F8-D.png') center/cover;
+  background: linear-gradient(rgba(27, 79, 114, 0.95), rgba(27, 79, 114, 0.98)), 
+              url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTI4MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTI4MCAxMzkuNUgwdjIuNWgxMjgweiIgZmlsbD0iIzAwMCIvPjxwYXRoIGQ9Ik0wIDBoMTI4MHYxNDBIMHoiIGZpbGw9InVybCgjYSkiLz48cGF0aCBkPSJNMCAwaDEyODB2MTQwSDB6IiBmaWxsPSJ1cmwoI2IpIi8+PHBhdGggZD0iTTEwNS44IDY4LjNsNy4yLTEyLjUgNy4zIDEyLjVoLTE0LjV6IiBmaWxsPSIjRkZGIi8+PHBhdGggZD0iTTEyMi4xIDU3LjhoMTAuM3YyMS4xaC0xMC4zeiIgZmlsbD0iI0ZGRiIvPjxwYXRoIGQ9Ik0xNDQuMSA3MS4zbDcuMi0xMi41IDcuMyAxMi41aC0xNC41eiIgZmlsbD0iI0ZGRiIvPjxwYXRoIGQ9Ik0xNjAuNCA1Ny44aDEwLjN2MjEuMWgtMTAuM3oiIGZpbGw9IiNGRkYiLz48cGF0aCBkPSJNMTgyLjQgNzEuM2w3LjItMTIuNSA3LjMgMTIuNWgtMTQuNXoiIGZpbGw9IiNGRkYiLz48L2c+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBzdG9wLWNvbG9yPSIjMUI0RjcyIiBvZmZzZXQ9IjAlIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzJFODZDMSIgb2Zmc2V0PSIxMDAlIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9InJnYmEoMjYsNjYsMTE0LDAuMykiIG9mZnNldD0iMCUiLz48c3RvcCBzdG9wLWNvbG9yPSJyZ2JhKDI2LDY2LDExNCwwKSIgb2Zmc2V0PSIxMDAlIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PC9zdmc+') center/cover;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  padding: 20px;
+  padding: 20px 15px;
   margin-bottom: 20px;
   color: white;
   position: relative;
@@ -81,75 +80,121 @@ body {
   .header-content {
     flex-direction: column;
     text-align: center;
+    gap: 12px;
   }
   
   .header {
-    min-height: 180px;
-    padding: 15px;
+    min-height: 140px;
+    padding: 15px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    min-height: 130px;
+    padding: 12px 10px;
   }
 }
 
 .logo-section {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   flex: 1;
+  min-width: 0;
 }
 
 .logo-icon {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 28px;
+  font-size: 24px;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.3);
   flex-shrink: 0;
 }
 
+@media (max-width: 480px) {
+  .logo-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
+
 .logo-text {
   flex: 1;
+  min-width: 0;
 }
 
 .logo-text h1 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: 5px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .logo-text h1 {
+    font-size: 16px;
+  }
 }
 
 .logo-text p {
-  font-size: 14px;
+  font-size: 13px;
   opacity: 0.95;
   font-weight: 300;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .logo-text p {
+    font-size: 12px;
+  }
 }
 
 .header-stats {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .header-stats {
+    gap: 6px;
+  }
 }
 
 .stat-item {
   background: rgba(255, 255, 255, 0.15);
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 20px;
-  font-size: 13px;
+  font-size: 12px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   white-space: nowrap;
 }
 
-.stat-item i {
-  font-size: 14px;
+@media (max-width: 480px) {
+  .stat-item {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+  
+  .stat-item i {
+    font-size: 12px;
+  }
 }
 
 /* شريط التنقل للجوال */
@@ -177,11 +222,17 @@ body {
   }
 }
 
+@media (max-width: 480px) {
+  .mobile-nav {
+    padding: 8px 4px;
+  }
+}
+
 .nav-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   background: none;
   border: none;
   color: var(--dark-gray);
@@ -207,6 +258,18 @@ body {
   background-clip: text;
 }
 
+@media (max-width: 480px) {
+  .nav-btn {
+    font-size: 10px;
+    padding: 5px 2px;
+    gap: 3px;
+  }
+  
+  .nav-btn i {
+    font-size: 15px;
+  }
+}
+
 /* المحتوى الرئيسي */
 .main-content {
   display: grid;
@@ -217,6 +280,12 @@ body {
 @media (min-width: 992px) {
   .main-content {
     grid-template-columns: 1fr 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    gap: 15px;
   }
 }
 
@@ -232,10 +301,16 @@ body {
   border: 1px solid var(--light-gray);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .control-panel {
     position: relative;
     top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .control-panel {
+    padding: 15px;
   }
 }
 
@@ -248,6 +323,12 @@ body {
   align-items: center;
   gap: 8px;
   font-size: 17px;
+}
+
+@media (max-width: 768px) {
+  .control-panel h3 {
+    font-size: 16px;
+  }
 }
 
 /* القوالب السريعة */
@@ -276,7 +357,7 @@ body {
 
 .template-btn:hover {
   border-color: var(--primary);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: var(--box-shadow-hover);
 }
 
@@ -288,10 +369,26 @@ body {
   background-clip: text;
 }
 
+@media (max-width: 768px) {
+  .template-btn {
+    padding: 10px 6px;
+  }
+  
+  .template-btn i {
+    font-size: 20px;
+  }
+}
+
 .template-btn span {
   font-size: 13px;
   font-weight: 600;
   color: var(--dark);
+}
+
+@media (max-width: 768px) {
+  .template-btn span {
+    font-size: 12px;
+  }
 }
 
 /* أزرار التحكم */
@@ -323,6 +420,17 @@ body {
   font-size: 16px;
 }
 
+@media (max-width: 768px) {
+  .action-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .action-btn i {
+    font-size: 15px;
+  }
+}
+
 .btn-preview {
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: white;
@@ -334,13 +442,13 @@ body {
 }
 
 .btn-print {
-  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
   color: white;
 }
 
 .btn-print:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
+  box-shadow: 0 6px 15px rgba(230, 126, 34, 0.3);
 }
 
 .btn-save {
@@ -380,6 +488,12 @@ body {
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .form-header {
+    padding: 15px 18px;
+  }
+}
+
 .form-header h2 {
   font-size: 18px;
   font-weight: 600;
@@ -390,8 +504,20 @@ body {
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  .form-header h2 {
+    font-size: 17px;
+  }
+}
+
 .form-content {
   padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .form-content {
+    padding: 15px;
+  }
 }
 
 /* أقسام النموذج */
@@ -401,6 +527,13 @@ body {
   background: var(--light);
   border-radius: var(--border-radius);
   border-right: 4px solid var(--primary);
+}
+
+@media (max-width: 768px) {
+  .form-section {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
 }
 
 .section-title {
@@ -415,6 +548,12 @@ body {
   gap: 8px;
 }
 
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 16px;
+  }
+}
+
 .section-title i {
   color: var(--primary);
   background: rgba(27, 79, 114, 0.1);
@@ -427,6 +566,14 @@ body {
   flex-shrink: 0;
 }
 
+@media (max-width: 768px) {
+  .section-title i {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+
 /* الحقول */
 .form-grid {
   display: grid;
@@ -437,6 +584,7 @@ body {
 @media (max-width: 768px) {
   .form-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 
@@ -453,6 +601,12 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .form-label {
+    font-size: 13.5px;
+  }
 }
 
 .form-label i {
@@ -477,12 +631,20 @@ body {
   color: var(--dark);
   transition: var(--transition);
   background: white;
+  -webkit-appearance: none;
 }
 
 .form-control:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(27, 79, 114, 0.1);
+}
+
+@media (max-width: 768px) {
+  .form-control {
+    padding: 11px 13px;
+    font-size: 16px; /* منع التكبير في iOS */
+  }
 }
 
 textarea.form-control {
@@ -501,11 +663,18 @@ textarea.form-control {
   transition: var(--transition);
   margin-bottom: 15px;
   background: rgba(27, 79, 114, 0.05);
+  touch-action: manipulation;
 }
 
 .upload-area:hover {
   border-color: var(--primary);
   background: rgba(27, 79, 114, 0.1);
+}
+
+@media (max-width: 768px) {
+  .upload-area {
+    padding: 20px;
+  }
 }
 
 .upload-area i {
@@ -515,11 +684,23 @@ textarea.form-control {
   display: block;
 }
 
+@media (max-width: 768px) {
+  .upload-area i {
+    font-size: 36px;
+  }
+}
+
 .upload-area p {
   color: var(--dark);
   font-size: 15px;
   margin-bottom: 6px;
   font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .upload-area p {
+    font-size: 14px;
+  }
 }
 
 .upload-area small {
@@ -534,6 +715,13 @@ textarea.form-control {
   margin-top: 15px;
 }
 
+@media (max-width: 480px) {
+  .image-preview {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+}
+
 .preview-image {
   position: relative;
   border-radius: 8px;
@@ -541,6 +729,12 @@ textarea.form-control {
   height: 120px;
   box-shadow: var(--box-shadow);
   transition: var(--transition);
+}
+
+@media (max-width: 480px) {
+  .preview-image {
+    height: 100px;
+  }
 }
 
 .preview-image img {
@@ -565,6 +759,7 @@ textarea.form-control {
   transition: var(--transition);
   opacity: 0.9;
   font-size: 12px;
+  touch-action: manipulation;
 }
 
 .remove-image:hover {
@@ -581,10 +776,23 @@ textarea.form-control {
   border: 1px solid rgba(27, 79, 114, 0.15);
 }
 
+@media (max-width: 768px) {
+  .signatures-section {
+    padding: 15px;
+  }
+}
+
 .signatures-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .signatures-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 }
 
 .signature-field {
@@ -593,6 +801,12 @@ textarea.form-control {
   padding: 18px;
   border-radius: 8px;
   box-shadow: var(--box-shadow);
+}
+
+@media (max-width: 768px) {
+  .signature-field {
+    padding: 15px;
+  }
 }
 
 .signature-input {
@@ -626,10 +840,13 @@ textarea.form-control {
   border-right: 4px solid;
   position: fixed;
   top: 20px;
-  left: 20px;
-  right: 20px;
+  left: 15px;
+  right: 15px;
   z-index: 10000;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @keyframes slideIn {
@@ -640,6 +857,15 @@ textarea.form-control {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .alert {
+    left: 10px;
+    right: 10px;
+    font-size: 13px;
+    padding: 10px 14px;
   }
 }
 
@@ -719,6 +945,12 @@ textarea.form-control {
   border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
+@media (max-width: 768px) {
+  .preview-header {
+    padding: 15px 18px;
+  }
+}
+
 .close-preview {
   background: rgba(255, 255, 255, 0.2);
   border: none;
@@ -733,6 +965,7 @@ textarea.form-control {
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+  touch-action: manipulation;
 }
 
 .close-preview:hover {
@@ -740,11 +973,17 @@ textarea.form-control {
   transform: rotate(90deg);
 }
 
-/* تصميم التقرير PDF - صفحة واحدة */
+/* تصميم التقرير للطباعة */
 .report-content {
   padding: 25px;
   font-family: 'Cairo', sans-serif;
   background: white;
+}
+
+@media (max-width: 768px) {
+  .report-content {
+    padding: 20px;
+  }
 }
 
 /* الهدف التربوي في الأعلى */
@@ -756,6 +995,14 @@ textarea.form-control {
   margin-bottom: 25px;
   text-align: center;
   box-shadow: var(--box-shadow);
+  border-right: 6px solid #229954;
+}
+
+@media (max-width: 768px) {
+  .goal-section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 .goal-section h3 {
@@ -765,6 +1012,12 @@ textarea.form-control {
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .goal-section h3 {
+    font-size: 18px;
+  }
 }
 
 .goal-section .goal-content {
@@ -780,6 +1033,14 @@ textarea.form-control {
   overflow-y: auto;
 }
 
+@media (max-width: 768px) {
+  .goal-section .goal-content {
+    padding: 15px;
+    font-size: 15px;
+    max-height: 180px;
+  }
+}
+
 /* الصف الثاني: إجراءات التنفيذ والنتائج المتحققة */
 .row-2 {
   display: grid;
@@ -791,6 +1052,8 @@ textarea.form-control {
 @media (max-width: 768px) {
   .row-2 {
     grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
   }
 }
 
@@ -798,8 +1061,16 @@ textarea.form-control {
   padding: 20px;
   border-radius: 12px;
   box-shadow: var(--box-shadow);
-  height: 300px;
+  min-height: 250px;
+  max-height: 300px;
   overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .implementation-box, .results-box {
+    padding: 15px;
+    min-height: 220px;
+  }
 }
 
 .implementation-box {
@@ -822,13 +1093,19 @@ textarea.form-control {
   gap: 10px;
 }
 
+@media (max-width: 768px) {
+  .implementation-box h4, .results-box h4 {
+    font-size: 16px;
+  }
+}
+
 .implementation-content, .results-content {
   background: rgba(255, 255, 255, 0.15);
   padding: 15px;
   border-radius: 8px;
   font-size: 15px;
   line-height: 1.7;
-  height: 200px;
+  min-height: 180px;
   overflow-y: auto;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -845,6 +1122,8 @@ textarea.form-control {
 @media (max-width: 768px) {
   .row-3 {
     grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
   }
 }
 
@@ -852,8 +1131,16 @@ textarea.form-control {
   padding: 20px;
   border-radius: 12px;
   box-shadow: var(--box-shadow);
-  height: 250px;
+  min-height: 220px;
+  max-height: 250px;
   overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .recommendations-box, .strengths-box {
+    padding: 15px;
+    min-height: 200px;
+  }
 }
 
 .recommendations-box {
@@ -876,13 +1163,19 @@ textarea.form-control {
   gap: 10px;
 }
 
+@media (max-width: 768px) {
+  .recommendations-box h4, .strengths-box h4 {
+    font-size: 16px;
+  }
+}
+
 .recommendations-content, .strengths-content {
   background: rgba(255, 255, 255, 0.2);
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 8px
   font-size: 15px;
   line-height: 1.7;
-  height: 160px;
+  min-height: 150px;
   overflow-y: auto;
 }
 
@@ -895,8 +1188,17 @@ textarea.form-control {
   box-shadow: var(--box-shadow);
   margin-bottom: 25px;
   border-right: 6px solid #D35400;
-  height: 250px;
+  min-height: 200px;
+  max-height: 250px;
   overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .improvements-box {
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 180px;
+  }
 }
 
 .improvements-box h4 {
@@ -907,16 +1209,30 @@ textarea.form-control {
   gap: 10px;
 }
 
+@media (max-width: 768px) {
+  .improvements-box h4 {
+    font-size: 18px;
+  }
+}
+
 .improvements-content {
   background: rgba(255, 255, 255, 0.2);
   padding: 20px;
   border-radius: 10px;
   font-size: 16px;
   line-height: 1.8;
-  height: 160px;
+  min-height: 130px;
   overflow-y: auto;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .improvements-content {
+    padding: 15px;
+    font-size: 15px;
+    min-height: 120px;
+  }
 }
 
 /* قسم الصور */
@@ -939,6 +1255,13 @@ textarea.form-control {
   gap: 15px;
 }
 
+@media (max-width: 768px) {
+  .report-images {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+  }
+}
+
 .report-image {
   border: 3px solid var(--light-gray);
   border-radius: 10px;
@@ -946,6 +1269,12 @@ textarea.form-control {
   transition: var(--transition);
   box-shadow: var(--box-shadow);
   height: 180px;
+}
+
+@media (max-width: 768px) {
+  .report-image {
+    height: 150px;
+  }
 }
 
 .report-image img {
@@ -969,6 +1298,8 @@ textarea.form-control {
   .report-signatures {
     flex-direction: column;
     align-items: center;
+    margin-top: 25px;
+    gap: 15px;
   }
 }
 
@@ -981,6 +1312,13 @@ textarea.form-control {
   border-radius: 10px;
   box-shadow: var(--box-shadow);
   border-top: 4px solid var(--primary);
+}
+
+@media (max-width: 768px) {
+  .signature-box {
+    width: 100%;
+    padding: 15px;
+  }
 }
 
 .signature-title {
@@ -1037,6 +1375,12 @@ textarea.form-control {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+@media (max-width: 768px) {
+  .loading-content {
+    padding: 20px;
+  }
+}
+
 .loading-spinner {
   width: 60px;
   height: 60px;
@@ -1051,10 +1395,23 @@ textarea.form-control {
   to { transform: rotate(360deg); }
 }
 
+@media (max-width: 768px) {
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+  }
+}
+
 .loading-overlay p {
   font-size: 18px;
   margin-bottom: 10px;
   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .loading-overlay p {
+    font-size: 16px;
+  }
 }
 
 .loading-overlay small {
@@ -1102,6 +1459,7 @@ textarea.form-control {
   .recommendations-box, .strengths-box, .improvements-box {
     break-inside: avoid;
     box-shadow: none !important;
+    border: 1px solid #ddd !important;
   }
   
   .report-images {
@@ -1126,7 +1484,7 @@ textarea.form-control {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  background: linear-gradient(135deg, var(--primary), var(--primary));
 }
 
 /* عدادات الأحرف */
@@ -1160,46 +1518,57 @@ textarea.form-control {
   color: var(--accent);
 }
 
-/* تحسينات للجوال */
+/* تحسينات للجوال الصغير جداً */
 @media (max-width: 480px) {
   .container {
-    padding: 8px;
+    padding: 10px 8px;
   }
   
   .header {
-    padding: 12px;
-    min-height: 160px;
+    min-height: 120px;
+    padding: 12px 10px;
   }
   
   .logo-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
   
   .logo-text h1 {
-    font-size: 17px;
+    font-size: 15px;
+    margin-bottom: 3px;
   }
   
   .logo-text p {
-    font-size: 12px;
+    font-size: 11px;
   }
   
   .stat-item {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+  
+  .stat-item i {
     font-size: 11px;
-    padding: 6px 10px;
   }
   
   .form-content {
-    padding: 15px;
+    padding: 12px;
   }
   
   .form-section {
-    padding: 15px;
+    padding: 12px;
   }
   
   .section-title {
-    font-size: 16px;
+    font-size: 15px;
+  }
+  
+  .section-title i {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
   }
   
   .form-control {
@@ -1208,36 +1577,57 @@ textarea.form-control {
   }
   
   .upload-area {
-    padding: 20px;
+    padding: 15px;
   }
   
   .upload-area i {
-    font-size: 36px;
+    font-size: 32px;
   }
   
   .upload-area p {
-    font-size: 14px;
+    font-size: 13px;
+  }
+  
+  .upload-area small {
+    font-size: 11px;
   }
   
   .preview-image {
-    height: 100px;
+    height: 90px;
   }
   
   .action-btn {
-    padding: 12px;
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .action-btn i {
     font-size: 14px;
   }
   
   .template-btn {
-    padding: 10px 6px;
+    padding: 8px 4px;
   }
   
   .template-btn i {
-    font-size: 20px;
+    font-size: 18px;
   }
   
   .template-btn span {
-    font-size: 12px;
+    font-size: 11px;
+  }
+  
+  .mobile-nav {
+    padding: 6px 3px;
+  }
+  
+  .nav-btn {
+    font-size: 9px;
+    padding: 4px 1px;
+  }
+  
+  .nav-btn i {
+    font-size: 14px;
   }
 }
 
@@ -1249,6 +1639,38 @@ textarea.form-control {
   
   .form-control, .signature-input {
     font-size: 16px; /* منع التكبير في iOS */
+  }
+  
+  /* تحسينات للأزرار على الجوال */
+  button, .action-btn, .template-btn {
+    min-height: 44px; /* الحد الأدنى للزر للجوال */
+  }
+  
+  input, textarea, select {
+    font-size: 16px; /* منع التكبير التلقائي في iOS */
+  }
+}
+
+/* تحسينات للوضع الأفقي في الجوال */
+@media (max-height: 500px) and (orientation: landscape) {
+  .header {
+    min-height: 100px;
+    padding: 10px;
+  }
+  
+  .mobile-nav {
+    display: none; /* إخفاء شريط التنقل في الوضع الأفقي */
+  }
+  
+  .container {
+    padding-bottom: 20px;
+  }
+}
+
+/* تحسينات خاصة لآيفون */
+@supports (-webkit-touch-callout: none) {
+  input, textarea {
+    font-size: 16px !important;
   }
 }
 </style>
@@ -1274,8 +1696,8 @@ textarea.form-control {
           <span>بيانات مؤمنة</span>
         </div>
         <div class="stat-item">
-          <i class="fas fa-file-pdf"></i>
-          <span>تصدير PDF</span>
+          <i class="fas fa-print"></i>
+          <span>طباعة مباشرة</span>
         </div>
         <div class="stat-item">
           <i class="fas fa-mobile-alt"></i>
@@ -1545,9 +1967,9 @@ textarea.form-control {
           معاينة التقرير
         </button>
         
-        <button class="action-btn btn-print" onclick="generatePDF()">
-          <i class="fas fa-file-pdf"></i>
-          إنشاء PDF
+        <button class="action-btn btn-print" onclick="printReport()">
+          <i class="fas fa-print"></i>
+          طباعة التقرير
         </button>
         
         <button class="action-btn btn-save" onclick="saveToLocalStorage()">
@@ -1593,9 +2015,9 @@ textarea.form-control {
     <span>معاينة</span>
   </button>
   
-  <button class="nav-btn" onclick="generatePDF()">
-    <i class="fas fa-file-pdf"></i>
-    <span>PDF</span>
+  <button class="nav-btn" onclick="printReport()">
+    <i class="fas fa-print"></i>
+    <span>طباعة</span>
   </button>
   
   <button class="nav-btn" onclick="saveToLocalStorage()">
@@ -1608,7 +2030,7 @@ textarea.form-control {
 <div class="preview-overlay" id="preview-overlay">
   <div class="preview-container">
     <div class="preview-header">
-      <h3><i class="fas fa-file-pdf"></i> معاينة التقرير (صفحة واحدة)</h3>
+      <h3><i class="fas fa-print"></i> معاينة التقرير (صفحة واحدة)</h3>
       <button class="close-preview" onclick="hidePreview()">
         <i class="fas fa-times"></i>
       </button>
@@ -1623,18 +2045,12 @@ textarea.form-control {
 <div class="loading-overlay" id="loading-overlay">
   <div class="loading-content">
     <div class="loading-spinner"></div>
-    <p>جاري إنشاء التقرير...</p>
-    <small>يرجى الانتظار، التقرير قيد الإعداد</small>
+    <p>جاري إعداد التقرير للطباعة...</p>
+    <small>يرجى الانتظار</small>
   </div>
 </div>
 
-<!-- مكتبات jsPDF و html2canvas -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
-// تهيئة jsPDF
-window.jsPDF = window.jspdf.jsPDF;
-
 // بيانات التطبيق
 const templates = {
   1: {
@@ -1683,6 +2099,7 @@ const templates = {
     target: "جميع طلاب الصف العاشر",
     subject: "الرياضيات والعلوم",
     strengths: "الدقة العلمية في التحليل الإحصائي، الشمولية في التغطية، المشاركة الفعالة من الطلاب والمعلمين، الموضوعية في التقييم، الوضوح في عرض النتائج",
+    improvements: "تطوير أدوات التقويم لتكون أكثر شمولية، زيادة التغذية الراج
     improvements: "تطوير أدوات التقويم لتكون أكثر شمولية، زيادة التغذية الراجعة للطلاب، تحسين توقيت الاختبارات التقويمية، تدريب المعلمين على استخدام أدوات تقييم حديثة"
   }
 };
@@ -1795,6 +2212,8 @@ function handleImageUpload(input) {
   uploadedImages = [];
   preview.innerHTML = '';
   
+  let imagesLoaded = 0;
+  
   files.forEach((file, index) => {
     if (!file.type.match('image.*')) {
       showAlert('يرجى رفع ملفات صور فقط', 'error');
@@ -1817,19 +2236,23 @@ function handleImageUpload(input) {
       const imgDiv = document.createElement('div');
       imgDiv.className = 'preview-image';
       imgDiv.innerHTML = `
-        <img src="${e.target.result}" alt="صورة ${index + 1}">
+        <img src="${e.target.result}" alt="صورة ${index + 1}" loading="lazy">
         <div class="remove-image" onclick="removeImage(${index})">
           <i class="fas fa-times"></i>
         </div>
       `;
       preview.appendChild(imgDiv);
+      
+      imagesLoaded++;
+      if (imagesLoaded === files.length && files.length > 0) {
+        showAlert(`تم رفع ${files.length} صورة بنجاح`, 'success');
+      }
+    };
+    reader.onerror = function() {
+      showAlert('حدث خطأ أثناء تحميل الصورة', 'error');
     };
     reader.readAsDataURL(file);
   });
-  
-  if (files.length > 0) {
-    showAlert(`تم رفع ${files.length} صورة بنجاح`, 'success');
-  }
 }
 
 // إزالة صورة
@@ -1844,13 +2267,15 @@ function removeImage(index) {
     const imgDiv = document.createElement('div');
     imgDiv.className = 'preview-image';
     imgDiv.innerHTML = `
-      <img src="${img.data}" alt="صورة ${i + 1}">
+      <img src="${img.data}" alt="صورة ${i + 1}" loading="lazy">
       <div class="remove-image" onclick="removeImage(${i})">
         <i class="fas fa-times"></i>
       </div>
     `;
     preview.appendChild(imgDiv);
   });
+  
+  showAlert('تم إزالة الصورة', 'info');
 }
 
 // حفظ في localStorage
@@ -1877,32 +2302,30 @@ function loadFromLocalStorage() {
     const saved = localStorage.getItem('educational_report_draft');
     if (!saved) return;
     
-    if (confirm('تم العثور على مسودة محفوظة. هل تريد تحميلها؟')) {
-      const data = JSON.parse(saved);
-      
-      document.getElementById('school-name').value = data.school || '';
-      document.getElementById('education-department').value = data.department || '';
-      document.getElementById('report-type').value = data.type || 'اثرائي';
-      document.getElementById('target-audience').value = data.target || '';
-      document.getElementById('semester').value = data.semester || 'الأول';
-      document.getElementById('subject').value = data.subject || '';
-      document.getElementById('educational-goal').value = data.goal || '';
-      document.getElementById('implementation-steps').value = data.steps || '';
-      document.getElementById('achieved-results').value = data.results || '';
-      document.getElementById('recommendations').value = data.recommendations || '';
-      document.getElementById('strengths').value = data.strengths || '';
-      document.getElementById('improvements').value = data.improvements || '';
-      document.getElementById('teacher-name').value = data.teacher || '';
-      document.getElementById('principal-name').value = data.principal || '';
-      
-      if (data.images && data.images.length > 0) {
-        uploadedImages = data.images;
-        updateImagePreview();
-      }
-      
-      updateCharCounters();
-      showAlert('تم تحميل المسودة بنجاح', 'success');
+    const data = JSON.parse(saved);
+    
+    document.getElementById('school-name').value = data.school || '';
+    document.getElementById('education-department').value = data.department || '';
+    document.getElementById('report-type').value = data.type || 'اثرائي';
+    document.getElementById('target-audience').value = data.target || '';
+    document.getElementById('semester').value = data.semester || 'الأول';
+    document.getElementById('subject').value = data.subject || '';
+    document.getElementById('educational-goal').value = data.goal || '';
+    document.getElementById('implementation-steps').value = data.steps || '';
+    document.getElementById('achieved-results').value = data.results || '';
+    document.getElementById('recommendations').value = data.recommendations || '';
+    document.getElementById('strengths').value = data.strengths || '';
+    document.getElementById('improvements').value = data.improvements || '';
+    document.getElementById('teacher-name').value = data.teacher || '';
+    document.getElementById('principal-name').value = data.principal || '';
+    
+    if (data.images && data.images.length > 0) {
+      uploadedImages = data.images;
+      updateImagePreview();
     }
+    
+    updateCharCounters();
+    showAlert('تم تحميل المسودة المحفوظة مسبقاً', 'info');
   } catch (e) {
     console.error('خطأ في تحميل المسودة:', e);
   }
@@ -1919,7 +2342,7 @@ function updateImagePreview() {
     const imgDiv = document.createElement('div');
     imgDiv.className = 'preview-image';
     imgDiv.innerHTML = `
-      <img src="${img.data}" alt="صورة ${i + 1}">
+      <img src="${img.data}" alt="صورة ${i + 1}" loading="lazy">
       <div class="remove-image" onclick="removeImage(${i})">
         <i class="fas fa-times"></i>
       </div>
@@ -1940,6 +2363,11 @@ function showPreview() {
   buildReportPreview(data);
   document.getElementById('preview-overlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
+  
+  // إضافة تأثير للمعاينة على الجوال
+  if (window.innerWidth <= 768) {
+    document.querySelector('.preview-container').style.animation = 'scaleIn 0.3s ease';
+  }
 }
 
 // إخفاء المعاينة
@@ -1948,12 +2376,12 @@ function hidePreview() {
   document.body.style.overflow = 'auto';
 }
 
-// إنشاء PDF
-function generatePDF() {
+// طباعة التقرير
+function printReport() {
   const data = collectFormData();
   
   if (!validateForm()) {
-    showAlert('الرجاء تعبئة الحقول المطلوبة قبل إنشاء PDF', 'error');
+    showAlert('الرجاء تعبئة الحقول المطلوبة قبل الطباعة', 'error');
     return;
   }
   
@@ -1967,58 +2395,15 @@ function generatePDF() {
     
     // انتظار لحظة لضمان تحميل الصور
     setTimeout(() => {
-      generatePDFFromPreview();
+      // فتح نافذة الطباعة
+      window.print();
+      
+      // إخفاء شاشة التحميل
       loadingOverlay.style.display = 'none';
-    }, 1000);
-  }, 1500);
-}
-
-// إنشاء PDF من المعاينة
-function generatePDFFromPreview() {
-  const reportContent = document.getElementById('report-content');
-  
-  html2canvas(reportContent, {
-    scale: 2,
-    useCORS: true,
-    allowTaint: true,
-    backgroundColor: '#ffffff',
-    logging: false,
-    windowWidth: reportContent.scrollWidth,
-    windowHeight: reportContent.scrollHeight,
-    onclone: function(clonedDoc) {
-      // تحسين العناصر في النسخة المستنسخة للطباعة
-      const clonedContent = clonedDoc.getElementById('report-content');
-      if (clonedContent) {
-        clonedContent.style.padding = '20px';
-        clonedContent.style.fontSize = '14px';
-      }
-    }
-  }).then(canvas => {
-    const imgData = canvas.toDataURL('image/jpeg', 0.9);
-    
-    // إنشاء PDF
-    const pdf = new jsPDF({
-      orientation: 'portrait',
-      unit: 'mm',
-      format: 'a4'
-    });
-    
-    const imgWidth = 190;
-    const imgHeight = (canvas.height * imgWidth) / canvas.width;
-    
-    // إضافة الصورة إلى PDF
-    pdf.addImage(imgData, 'JPEG', 10, 10, imgWidth, imgHeight);
-    
-    // حفظ الملف
-    const fileName = `تقرير_تعليمي_${new Date().toISOString().split('T')[0]}.pdf`;
-    pdf.save(fileName);
-    
-    showAlert('تم إنشاء وتحميل ملف PDF بنجاح', 'success');
-  }).catch(error => {
-    console.error('Error generating PDF:', error);
-    showAlert('حدث خطأ أثناء إنشاء PDF', 'error');
-    document.getElementById('loading-overlay').style.display = 'none';
-  });
+      
+      showAlert('تم فتح نافذة الطباعة، يمكنك طباعة التقرير الآن', 'success');
+    }, 800);
+  }, 1200);
 }
 
 // بناء معاينة التقرير (صفحة واحدة)
@@ -2060,8 +2445,14 @@ function buildReportPreview(data) {
 
   // قص النص إذا تجاوز 250 حرف
   const truncateForBox = (text, maxLength = 250) => {
-    if (!text) return 'لم يتم إضافة محتوى';
+    if (!text || text.trim() === '') return 'لم يتم إضافة محتوى';
     return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
+  };
+
+  // تحويل النص إلى أسطر
+  const formatTextWithLines = (text) => {
+    if (!text) return '';
+    return text.replace(/\n/g, '<br>');
   };
 
   content.innerHTML = `
@@ -2094,7 +2485,7 @@ function buildReportPreview(data) {
     <div class="goal-section">
       <h3><i class="fas fa-bullseye"></i> الهدف التربوي</h3>
       <div class="goal-content">
-        ${data.goal || 'لم يتم تحديد الهدف التربوي'}
+        ${formatTextWithLines(data.goal || 'لم يتم تحديد الهدف التربوي')}
       </div>
     </div>
     
@@ -2103,14 +2494,14 @@ function buildReportPreview(data) {
       <div class="implementation-box">
         <h4><i class="fas fa-tasks"></i> إجراءات التنفيذ</h4>
         <div class="implementation-content">
-          ${truncateForBox(data.steps)}
+          ${formatTextWithLines(truncateForBox(data.steps))}
         </div>
       </div>
       
       <div class="results-box">
         <h4><i class="fas fa-chart-line"></i> النتائج المتحققة</h4>
         <div class="results-content">
-          ${truncateForBox(data.results)}
+          ${formatTextWithLines(truncateForBox(data.results))}
         </div>
       </div>
     </div>
@@ -2120,14 +2511,14 @@ function buildReportPreview(data) {
       <div class="recommendations-box">
         <h4><i class="fas fa-comments"></i> التوصيات والمقترحات</h4>
         <div class="recommendations-content">
-          ${truncateForBox(data.recommendations)}
+          ${formatTextWithLines(truncateForBox(data.recommendations))}
         </div>
       </div>
       
       <div class="strengths-box">
         <h4><i class="fas fa-thumbs-up"></i> نقاط القوة</h4>
         <div class="strengths-content">
-          ${truncateForBox(data.strengths)}
+          ${formatTextWithLines(truncateForBox(data.strengths))}
         </div>
       </div>
     </div>
@@ -2136,7 +2527,7 @@ function buildReportPreview(data) {
     <div class="improvements-box">
       <h4><i class="fas fa-lightbulb"></i> فرص التحسين</h4>
       <div class="improvements-content">
-        ${truncateForBox(data.improvements)}
+        ${formatTextWithLines(truncateForBox(data.improvements))}
       </div>
     </div>
     
@@ -2147,7 +2538,7 @@ function buildReportPreview(data) {
         <div class="report-images">
           ${uploadedImages.map((img, index) => `
             <div class="report-image">
-              <img src="${img.data}" alt="صورة توثيقية ${index + 1}">
+              <img src="${img.data}" alt="صورة توثيقية ${index + 1}" loading="lazy">
             </div>
           `).join('')}
         </div>
@@ -2190,6 +2581,21 @@ function buildReportPreview(data) {
       </div>
     </div>
   `;
+  
+  // إضافة تحميل lazy للصور في المعاينة
+  setTimeout(() => {
+    const images = content.querySelectorAll('img');
+    images.forEach(img => {
+      if (!img.complete) {
+        img.onload = function() {
+          console.log('تم تحميل الصورة:', img.src);
+        };
+        img.onerror = function() {
+          console.error('فشل تحميل الصورة:', img.src);
+        };
+      }
+    });
+  }, 100);
 }
 
 // جمع بيانات النموذج
@@ -2269,11 +2675,7 @@ function scrollToTop() {
 function setActiveNavBtn(index) {
   const navBtns = document.querySelectorAll('.nav-btn');
   navBtns.forEach((btn, i) => {
-    if (i === index) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
+    btn.classList.toggle('active', i === index);
   });
 }
 
@@ -2296,7 +2698,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // تحميل المسودة المحفوظة
+  // تحميل المسودة المحفوظة تلقائياً
   loadFromLocalStorage();
   
   // تعيين القيم الافتراضية إذا كانت فارغة
@@ -2311,7 +2713,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // تحديث العدادات الأولية
   updateCharCounters();
   
-  // الترحيب
+  // الترحيب بعد تحميل الصفحة
   setTimeout(() => {
     showAlert('مرحباً بك في نظام التقارير التعليمية!', 'info');
   }, 1000);
@@ -2327,6 +2729,17 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
           this.style.transform = '';
         }, 150);
+      });
+    });
+    
+    // تحسين الحقول للجوال
+    document.querySelectorAll('input, textarea, select').forEach(field => {
+      field.addEventListener('focus', function() {
+        if (window.innerWidth <= 768) {
+          setTimeout(() => {
+            this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 300);
+        }
       });
     });
   }
@@ -2362,6 +2775,11 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+  
+  // تحسين الأداء للجوال
+  if ('connection' in navigator && navigator.connection.saveData === true) {
+    console.log('وضع توفير البيانات مفعل، تم تحميل الملفات الأساسية فقط');
+  }
 });
 
 // إغلاق التنبيه بالنقر
@@ -2382,6 +2800,20 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     hidePreview();
   }
+  
+  // دعم اختصارات لوحة المفاتيح
+  if (e.ctrlKey || e.metaKey) {
+    switch(e.key) {
+      case 'p':
+        e.preventDefault();
+        printReport();
+        break;
+      case 's':
+        e.preventDefault();
+        saveToLocalStorage();
+        break;
+    }
+  }
 });
 
 // إغلاق المعاينة بالنقر خارجها
@@ -2394,6 +2826,25 @@ if (previewOverlay) {
   });
 }
 
+// دعم الطابعة
+window.addEventListener('beforeprint', () => {
+  console.log('جاري التحضير للطباعة...');
+});
+
+window.addEventListener('afterprint', () => {
+  console.log('تم الانتهاء من الطباعة');
+  showAlert('تم الانتهاء من عملية الطباعة', 'info');
+});
+
+// دعم عدم اتصال الإنترنت
+window.addEventListener('online', () => {
+  showAlert('تم استعادة الاتصال بالإنترنت', 'success');
+});
+
+window.addEventListener('offline', () => {
+  showAlert('فقدت الاتصال بالإنترنت، يمكنك الاستمرار في العمل محلياً', 'warning');
+});
+
 // إضافة أنماط CSS للـ fadeOut
 const fadeOutStyle = document.createElement('style');
 fadeOutStyle.textContent = `
@@ -2401,8 +2852,81 @@ fadeOutStyle.textContent = `
     from { opacity: 1; transform: translateY(0); }
     to { opacity: 0; transform: translateY(-20px); }
   }
+  
+  /* تحسينات الطباعة */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    .goal-section, .implementation-box, .results-box,
+    .recommendations-box, .strengths-box, .improvements-box {
+      page-break-inside: avoid;
+    }
+    
+    .report-images {
+      page-break-inside: avoid;
+    }
+  }
 `;
 document.head.appendChild(fadeOutStyle);
+
+// تحسين أداء التمرير على الجوال
+if ('ontouchstart' in window) {
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', function(event) {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault();
+    }
+    lastTouchEnd = now;
+  }, false);
+}
+
+// دعم خاصية التثبيت (PWA)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      console.log('ServiceWorker registration successful');
+    }, function(err) {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+
+// إضافة خاصية حفظ تلقائي أثناء الكتابة
+let autoSaveTimeout;
+document.querySelectorAll('input, textarea, select').forEach(element => {
+  element.addEventListener('input', function() {
+    clearTimeout(autoSaveTimeout);
+    autoSaveTimeout = setTimeout(() => {
+      saveToLocalStorage();
+    }, 3000); // حفظ تلقائي بعد 3 ثواني من التوقف عن الكتابة
+  });
+});
+
+// تحسين عرض التاريخ على الجوال
+function formatMobileDate() {
+  const now = new Date();
+  const options = { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric',
+    weekday: 'long'
+  };
+  return now.toLocaleDateString('ar-SA', options);
+}
+
+// تحديث التاريخ في الهيدر بشكل دوري (كل ساعة)
+setInterval(() => {
+  const dateElements = document.querySelectorAll('.report-date, [data-date]');
+  dateElements.forEach(el => {
+    if (el.textContent.includes('م -')) {
+      // تحديث التاريخ فقط إذا كان يحتوي على التاريخ الهجري
+      el.textContent = formatMobileDate();
+    }
+  });
+}, 3600000); // كل ساعة
 </script>
 </body>
 </html>
