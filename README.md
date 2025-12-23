@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
@@ -101,26 +101,28 @@
 <iframe id="preview"></iframe>
 
 <script>
-let imageData = [];
+let images = [];
 
 document.getElementById('images').addEventListener('change', e => {
-  imageData = [];
+  images = [];
   const files = Array.from(e.target.files).slice(0, 2);
   files.forEach(file => {
     const reader = new FileReader();
-    reader.onload = ev => imageData.push(ev.target.result);
+    reader.onload = ev => images.push(ev.target.result);
     reader.readAsDataURL(file);
   });
 });
 
-function generate() {
-  const v = id => document.getElementById(id).value || '';
+function v(id) {
+  return document.getElementById(id).value || '';
+}
 
-  const imgs = [0,1].map(i =>
-    imageData[i]
-      ? `<img src="${imageData[i]}" style="width:100%;height:100%;object-fit:cover">`
-      : 'شواهد الصور'
-  ).join('');
+function generate() {
+  const imgHTML = [0,1].map(i => `
+    <div class="img-box">
+      ${images[i] ? `<img src="${images[i]}">` : 'شواهد الصور'}
+    </div>
+  `).join('');
 
   const html = `
 <!DOCTYPE html>
@@ -128,19 +130,24 @@ function generate() {
 <head>
 <meta charset="UTF-8">
 <style>
-body{font-family:Cairo,sans-serif;margin:0}
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+*{box-sizing:border-box;font-family:Cairo,sans-serif}
+body{margin:0}
 .header{height:90px;background:#083024;color:#fff;position:relative}
 .admin{position:absolute;top:6px;right:12px;font-size:8px}
 .school{position:absolute;bottom:6px;right:12px;font-size:8px}
 .date{position:absolute;bottom:6px;left:12px;font-size:8px}
 .wrap{max-width:210mm;margin:auto;padding:10px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.grid{display:grid;gap:4px}
+.grid3{grid-template-columns:repeat(3,1fr)}
+.grid4{grid-template-columns:repeat(4,1fr)}
 .box{border:1px solid #083024;border-radius:4px;padding:4px;font-size:7px;text-align:center}
 .section{border:1px solid #ccc;border-radius:6px;padding:6px;margin-bottom:8px}
 .title{font-size:7px;font-weight:600;border-bottom:1px solid #ccc;margin-bottom:3px}
-.content{font-size:6px;line-height:1.4}
-.images{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.img{height:120px;border:1px dashed #083024;display:flex;align-items:center;justify-content:center;font-size:7px;overflow:hidden}
+.content{font-size:6px;line-height:1.4;white-space:pre-line}
+.images{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.img-box{height:120px;border:1px dashed #083024;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:7px;overflow:hidden}
+.img-box img{width:100%;height:100%;object-fit:cover}
 </style>
 </head>
 <body>
@@ -148,24 +155,26 @@ body{font-family:Cairo,sans-serif;margin:0}
 <div class="header">
   <div class="admin">${v('admin')}</div>
   <div class="school">${v('school')}</div>
-  <div class="date" id="d"></div>
+  <div class="date" id="hijri"></div>
 </div>
 
 <div class="wrap">
-  <div class="grid">
-    <div class="box"><strong>الفصل</strong>${v('term')}</div>
-    <div class="box"><strong>الصف</strong>${v('grade')}</div>
-    <div class="box"><strong>المادة</strong>${v('subject')}</div>
+  <div class="grid grid3">
+    <div class="box"><strong>الفصل</strong><br>${v('term')}</div>
+    <div class="box"><strong>الصف</strong><br>${v('grade')}</div>
+    <div class="box"><strong>المادة</strong><br>${v('subject')}</div>
   </div>
 
-  <div class="grid" style="margin-top:4px">
-    <div class="box"><strong>التقرير</strong>${v('type')}</div>
-    <div class="box"><strong>المستهدفون</strong>${v('target')}</div>
-    <div class="box"><strong>العدد</strong>${v('count')}</div>
-    <div class="box"><strong>المكان</strong>${v('place')}</div>
+  <div class="grid grid4" style="margin-top:4px">
+    <div class="box"><strong>التقرير</strong><br>${v('type')}</div>
+    <div class="box"><strong>المستهدفون</strong><br>${v('target')}</div>
+    <div class="box"><strong>العدد</strong><br>${v('count')}</div>
+    <div class="box"><strong>المكان</strong><br>${v('place')}</div>
   </div>
 
-  <div class="section"><div class="content">${v('objective')}</div></div>
+  <div class="section">
+    <div class="content">${v('objective')}</div>
+  </div>
 
   <div class="grid" style="grid-template-columns:1fr 1fr">
     <div class="section"><div class="title">خطوات التنفيذ</div><div class="content">${v('steps')}</div></div>
@@ -180,8 +189,7 @@ body{font-family:Cairo,sans-serif;margin:0}
   </div>
 
   <div class="images">
-    <div class="img">${imgs.split('</div>')[0]}</div>
-    <div class="img">${imgs.split('</div>')[1] || 'شواهد الصور'}</div>
+    ${imgHTML}
   </div>
 </div>
 
@@ -190,12 +198,13 @@ fetch('https://api.aladhan.com/v1/gToH')
 .then(r=>r.json())
 .then(d=>{
  const h=d.data.hijri;
- document.getElementById('d').textContent=h.day+' '+h.month.ar+' '+h.year+' هـ';
+ document.getElementById('hijri').textContent=h.day+' '+h.month.ar+' '+h.year+' هـ';
 });
 <\/script>
 
 </body>
-</html>`;
+</html>
+`;
 
   document.getElementById('preview').srcdoc = html;
 }
