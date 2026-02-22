@@ -61,12 +61,14 @@ body{
 .header-education{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);font-size:10px;}
 .header-date{position:absolute;left:12px;top:10px;font-size:9px;text-align:right;}
 
+/* مربعات المعلومات */
 .info-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(5,1fr);
   gap:6px;
   margin-bottom:6px;
 }
+
 .info-grid2{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -97,6 +99,7 @@ body{
   font-weight:600;
 }
 
+/* باقي التصميم كما هو */
 .box-objective{
   border:1px solid var(--border);
   border-radius:8px;
@@ -204,7 +207,7 @@ body{
   <div class="header-date">1447 هـ<br>2026 م</div>
 </div>
 
-<!-- الخانات العليا بعد الترتيب الجديد -->
+<!-- الصف الأول -->
 <div class="info-grid">
   <div class="info-box">
     <div class="info-title">الفصل الدراسي</div>
@@ -213,6 +216,10 @@ body{
   <div class="info-box">
     <div class="info-title">المجال</div>
     <div class="info-value">تربوي</div>
+  </div>
+  <div class="info-box">
+    <div class="info-title">مكان التنفيذ</div>
+    <div class="info-value">داخل المدرسة</div>
   </div>
   <div class="info-box">
     <div class="info-title">المستهدفون</div>
@@ -224,10 +231,11 @@ body{
   </div>
 </div>
 
+<!-- الصف الثاني -->
 <div class="info-grid2">
   <div class="info-box">
-    <div class="info-title">مكان التنفيذ</div>
-    <div class="info-value">داخل المدرسة</div>
+    <div class="info-title">المبادرة</div>
+    <div class="info-value">دعم الأداء الصفي</div>
   </div>
   <div class="info-box">
     <div class="info-title">اسم التقرير</div>
@@ -239,6 +247,7 @@ body{
   </div>
 </div>
 
+<!-- باقي التقرير كما هو -->
 <div class="box-objective">
   <div class="box-title">الأهداف</div>
   <div class="box-content"></div>
